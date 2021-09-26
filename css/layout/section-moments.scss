@@ -1,0 +1,292 @@
+#content-moments {
+	position: relative;
+
+	&:before {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom:0;
+		background-color: $light-grey;
+		height: 8rem;
+	}
+
+	#content-moments-inner {
+		padding:6rem 0;
+		position: relative;
+
+		#content-moments-text {
+			text-align: center;
+			position: relative;
+
+			@media #{$breakpoint-md-up} {
+			float:left;
+			width: 50%;
+			padding-left: calc(100% / 12);
+			padding-right: calc(100% / 12);
+
+			}
+		}
+
+		#content-moments-video {
+
+			@media #{$breakpoint-md-up} {
+				float:right;
+				width: 50%;
+			}
+		}
+	}
+}
+
+// Moments Text
+#content-moments-text {
+
+	.content-moments-bg {
+		position: absolute;
+		left: 50%;
+		top: 5rem;
+		color: $light-grey;
+		font-size: 4rem;
+		transform: translate(-50%, 0) rotate(15deg);
+		z-index: -1;
+		transform-origin: center center;
+
+
+		@media #{$breakpoint-sm-up} {
+			font-size: 6rem;
+		}
+
+	}
+
+	.content-icon {
+		font-size: 3rem;
+		color: $theme-color-1;
+	}
+
+	.content-title {
+	}
+
+	p {
+		line-height: 1.5;
+		margin-bottom: 1rem;
+	}
+
+	.content-moments-btn {
+		margin:1rem 0;
+	}
+}
+
+// Moments Video
+#content-moments-video {
+	#content-moments-video-container {
+
+		#player-overlay {
+			padding:1rem;
+			position: relative;
+
+			&:before {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+				height: 2rem;
+				width: 2rem;
+				color: inherit;
+				border-left: 0.25rem solid currentColor;
+				border-top: 0.25rem solid currentColor;
+			}
+
+			&:after {
+				position: absolute;
+				content: '';
+				right: 0;
+				bottom:0;
+				height: 2rem;
+				width: 2rem;
+				color: inherit;
+				border-right: 0.25rem solid currentColor;
+				border-bottom: 0.25rem solid currentColor;
+			}
+			video {
+			  width: 100%;
+			  max-height: 100%;
+			  background-color: $black;
+			}
+		}
+	}
+}
+
+// Moment Packs 
+
+#content-packs-inner {
+	// margin-bottom: -3rem;
+
+	.moment-pack-container {
+		padding:1.5rem;
+		@include box-shadow(0,0.125rem,2rem, rgba($black,0.1));
+		position: relative;
+		margin-bottom: 1rem;
+		z-index: 2;
+		background-color: $white;
+
+		&.pack-type-1 {
+			.moment-pack-text {
+				.moment-pack-title {
+					@include text-shadow(0.125rem, 0.125rem, 0, $pack-type-color-1); 
+				}
+			}
+		}
+		&.pack-type-2 {
+			.moment-pack-text {
+				.moment-pack-title {
+					@include text-shadow(0.125rem, 0.125rem, 0, $pack-type-color-2); 
+				}
+			}
+		}
+		&.pack-type-3 {
+			.moment-pack-text {
+				.moment-pack-title {
+					@include text-shadow(0.125rem, 0.125rem, 0, $pack-type-color-3); 
+				}
+			}
+		}
+		
+		.moment-pack-text {
+
+			.moment-pack-title {
+				font-size: 1.5rem;
+				line-height: 2rem;
+				// text-transform: uppercase;
+				font-weight:800;
+				@include text-shadow(0.125rem, 0.125rem, 0, $light-grey); 
+			}
+
+			.moment-pack-features {
+				min-height: 7.5rem;
+				font-size: 0.875rem;
+				ul {
+					margin:0.5rem 0 0.5rem 1rem;
+					padding:0;
+					list-style: disc;
+
+					li {
+						margin-bottom: 0;
+						line-height: 1.5rem;
+					}
+				}
+
+			}
+
+			.moment-pack-price {
+				.moment-pack-price-label {
+					text-transform: uppercase;
+					font-size: 0.75rem;
+					line-height: 1.0rem;
+					font-weight: 600;
+				}
+
+				.moment-pack-price-value {
+					font-size: 2rem;
+					font-weight: 800;
+					line-height: 2rem;
+
+					span {
+						font-size: 0.875rem;
+					}
+				}
+			}
+
+		}
+
+		.moment-pack-image-container {
+			position: absolute;
+			right: 1.5rem;
+			top: 3.5rem;
+			max-width: 7rem;
+
+			a {
+				display: block;
+				color: inherit;
+				text-decoration: none;
+			}
+
+			.moment-pack-image-1 {
+				position: relative;
+				left: 0;
+				top: 0;
+
+				img {
+					vertical-align: top;
+					width: 100%;
+					display: block;
+					@include rotate(15deg);
+					outline: 0;
+					@include transition(all .3s ease);
+					@include box-shadow(0,0,1rem,rgba($black,0.1));
+				}
+			}
+
+			.moment-pack-image-2 {
+				position: absolute;
+				left: 0;
+				top: 0;
+
+				img {
+					vertical-align: top;
+					width: 100%;
+					display: block;
+					@include rotate(-5deg);
+					outline: 0;
+					@include transition(all .3s ease);
+					@include box-shadow(0,0,1rem,rgba($black,0.1));
+				}
+			}
+		}
+
+
+
+		&:hover, &:focus {
+			.moment-pack-image-container {
+				
+				.moment-pack-image-1 {
+					img {
+						@include rotate(5deg);
+					}
+				}
+
+				.moment-pack-image-2 {
+					img {
+						@include rotate(-10deg);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Accents
+.content-moments-accents-top {
+	position: absolute;
+	left: 0;
+	top:0;
+
+	.content-moments-accents-top-1 {
+		font-size: 4.0rem;
+		position: absolute;
+		left: 0rem;
+		top: -2rem;
+		@include opacity (0.15);
+	}
+	.content-moments-accents-top-2 {
+		height: 1rem;
+		width: 3rem;
+		position: absolute;
+		left: 3rem;
+		top: 0.5rem;
+		background-color: $black;
+	}
+}
+
+

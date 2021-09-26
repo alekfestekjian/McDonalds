@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-control" content="public">
+	<meta name="description" content="Myodis Portal" />
+	<title>Myodis Portal</title>
+
+	<!-- CSS -->
+	<link href="css/core.css" rel="stylesheet" defer />
+
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" defer>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" defer>
+	
+	<!-- Line Awesome -->
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" defer>
+
+
+
+</head>
+<body>
+
+	<header id="header" class="show-hero-image">
+
+		<div id="header-bar" class="fixed">
+			<div class="page-width">
+				
+				<div id="header-bar-inner">
+
+					<!-- Header Logo -->
+					<div id="header-logo">
+						<a href="index.html" title="Click to Go Home">
+							<img src="images/theme/nwl/logo.png" alt="Logo" />
+							<!-- <span class="icon_logo_clipcards_knockout"></span> -->
+						</a>
+					</div>
+
+
+					<div id="header-menu-trigger">
+						<button type="button" class="btn-default" id="btn-toggle-nav" onclick="toggleNav();">
+							<span class="btn-icon"><i class="las la-bars"></i></span>
+							<span class="btn-text sr-only">Menu</span>
+						</button>
+					</div>
+					
+					<!-- Navigation  -->
+					<div id="header-navigation" class="clearfix">
+						<div id="header-main-nav">
+							<ul>
+								<li><a class="nav-link selected" href="index.html">Home</a></li>
+								<li><a class="nav-link" href="my-cards.html">My Cards</a></li>
+								<li><a class="nav-link" href="store.html">Store</a></li>
+								<li><a class="nav-link" href="marketplace.html">Marketplace</a></li>
+								<!-- <li><a class="nav-link" href="how-it-works.html">How it works</a></li> -->
+								<li><a class="nav-link" href="faqs.html">FAQs</a></li>
+							</ul>
+						</div>
+
+						<div id="header-member-nav" style="display: block;">
+							<ul>
+								<li>
+									<button type="button" class="btn-default btn-outline" id="btn-login" data-dialog="dialog-login">
+										<span class="btn-text">Login</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn-default btn-secondary" id="btn-register" data-dialog="dialog-register">
+										<span class="btn-text">Register</span>
+									</button>
+								</li>
+							</ul>
+						</div>
+
+						<div id="header-menu-close" class="hidden">
+							<button type="button" class="btn-default" id="btn-close-nav" onclick="toggleNav();">
+								<span class="btn-icon"><i class="las la-times"></i></span>
+								<span class="btn-text sr-only">Close</span>
+							</button>
+						</div>
+
+						<!-- Members Area  -->
+						<div id="header-member" style="display: none;">
+							<div class="member-container">
+								<div class="member-link">
+									<a href="javascript:void(0);" class="member-link" onclick="toggleDropdown('member-options',this);">
+										<div class="member-avatar">
+											<img src="images/member/member-profile.jpg" alt="Profile Image" />
+										</div>
+										<div class="member-content">
+											<div class="member-name">McChickenFan83</div>
+											<!-- <div class="member-rank">Collector</div> -->
+										</div>
+									</a>
+								</div>
+								<div class="member-options" id="member-options" style="display: none;">
+									<ul>
+										<li><a href="my-cards.html">My Cards <span class="item-count">9</span></a></li>
+										<li><a href="my-packs.html">My Packs <span class="item-count">0</span></a></li>
+										<li><a href="my-challenges.html">Challenges <span class="item-count">3</span></a></li>
+										<li><a href="my-buy-sell.html">Buy &amp; Sell</a></li>
+										<li><a href="my-wallet.html">My Wallet</a></li>
+										<li><a href="my-profile.html">My Profile</a></li>
+										<li><a href="index.html">Logout</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+
+	<!-- Hero -->
+
+	<section id="hero-container">
+		
+		<div id="header-image-shading"></div>
+
+		<div id="header-hero">
+			<div class="page-width">
+				<div id="header-hero-inner" class="clearfix">
+					
+					<div id="header-hero-image">
+						<div class="header-hero-container">
+							<div class="hero-background"></div>
+							<div class="hero-pack-1"><img src="images/theme/nwl/pack1-mcd.png" alt="" /></div>
+							<div class="hero-pack-2"><img src="images/theme/nwl/pack2-mcd.png" alt="" /></div>
+							<div class="hero-pack-3"><img src="images/theme/nwl/pack3-mcd.png" alt="" /></div>
+							<div class="hero-splatter-1"><span class="icon_splatter_1"></span></div>
+							<div class="hero-splatter-2"><span class="icon_splatter_2"></span></div>
+							<div class="hero-brushstroke"><span class="icon_brush_stroke"></span></div>
+							<div class="hero-cube-1"></div>
+							<div class="hero-cube-2"></div>
+							<div class="hero-accent-1"><span class="icon_stripe"></span></div>
+							<div class="hero-accent-2"><span class="icon_arrows"></span></div>
+							<div class="hero-accent-3"><span class="icon_zigzag"></span></div>
+						</div>
+					</div>
+					<div id="header-hero-text">
+						<h1 class="hero-title">Collect &amp; own your first<b>HAPPY MEAL NFTs</b> </h1>
+						<p>Collect your first Happy Meal NFTs and be entered into a sweepstakes for a chance to win prizes!</p>
+						
+						<div class="header-hero-buttons">
+							<ul class="list-reset list-inline">
+								<li>
+									<button type="button" class="btn-default btn-primary" onclick="window.location='store.html'">
+										<span class="btn-text">Start your Collection</span>
+									</button>
+								</li>
+								<!--
+								<li>
+									<button type="button" class="btn-default btn-link">
+										<span class="btn-text">How does it work?</span>
+									</button>
+								</li>
+								-->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	
+
+
+	<!-- Moments -->
+	<section id="content-moments">
+		<div class="page-width">
+			<div id="content-moments-inner" class="clearfix">
+
+				<div class="content-moments-accents-top">
+					<div class="content-moments-accents-top-1"><span class="icon_stripe"></span></div>
+					<div class="content-moments-accents-top-2"></div>
+				</div>
+
+				<div id="content-moments-text">
+					<div class="content-moments-bg"><span class="icon_brush_stroke"></span></div>
+					<div class="content-icon"><span class="las la-layer-group"></span></div>
+					<h2 class="content-title">Moment Packs</h2>
+					<p>Each pack contains a different assortment of possible Moments to be collected. But be quick if you want to grab the newest Moments.</p>
+					<div class="content-moments-btn">
+						<button class="btn-default btn-primary" id="btn-visit-pack-store" onclick="window.location='store.html'">
+							<span class="btn-text">Visit Pack Store</span>
+						</button>
+					</div>
+					<div class="content-moments-btn">
+						<button class="btn-default btn-link" id="btn-what-are-moments">
+							<span class="btn-text">What are moments?</span>
+						</button>
+					</div>
+				</div>
+
+				<!-- Explainer Video -->
+				<div id="content-moments-video">
+					<div id="content-moments-video-container">
+						<div id="player-overlay">
+						  	<video width="100%" video="100%" controls="" muted="" loop="true" style="width:100%, height:100%">
+							    <source src="video/sample.mp4" />
+								Your browser does not support the video tag.
+						  	</video>    
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="content-packs-inner" class="clearfix">
+				<div class="grid-center">
+					<div class="col-4_md-6_sm-12">
+						<div class="moment-pack-container">
+							<div class="moment-pack-text">
+								<h3 class="moment-pack-title">Happy Meal NFT Pack 1</h3>
+								<div class="moment-pack-features">
+									<ul>
+										<li>3 Common Moments</li>
+									</ul>
+								</div>
+								<div class="moment-pack-price">
+									<div class="moment-pack-price-label">Price</div>
+									<div class="moment-pack-price-value">$49.00 <span class="system-currency">USD</span></div>
+								</div>
+							</div>
+							<div class="moment-pack-image-container">
+								<a href="store.html">
+									<div class="moment-pack-image-1"><img src="images/theme/nwl/pack1-mcd.png" alt=""></div>
+									<div class="moment-pack-image-2"><img src="images/theme/nwl/pack1-mcd.png" alt=""></div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-4_md-6_sm-12">
+						<div class="moment-pack-container">
+							<div class="moment-pack-text">
+								<h3 class="moment-pack-title">Happy Meal NFT Pack 2</h3>
+								<div class="moment-pack-features">
+									<ul>
+										<li>7 Common Moments</li>
+										<li>1 Rare Moment</li>
+									</ul>
+								</div>
+								<div class="moment-pack-price">
+									<div class="moment-pack-price-label">Price</div>
+									<div class="moment-pack-price-value">$29.00 <span class="system-currency">USD</span></div>
+								</div>
+							</div>
+							<div class="moment-pack-image-container">
+								<a href="store.html">
+									<div class="moment-pack-image-1"><img src="images/theme/nwl/pack2-mcd.png" alt=""></div>
+									<div class="moment-pack-image-2"><img src="images/theme/nwl/pack2-mcd.png" alt=""></div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-4_md-6_sm-12">
+						<div class="moment-pack-container">
+							<div class="moment-pack-text">
+								<h3 class="moment-pack-title">Happy Meal NFT Pack 3</h3>
+								<div class="moment-pack-features">
+									<ul>
+										<li>7 Common Moments</li>
+										<li>3 Rare Moments</li>
+										<li>1 Legendary Moment</li>
+									</ul>
+								</div>
+								<div class="moment-pack-price">
+									<div class="moment-pack-price-label">Price</div>
+									<div class="moment-pack-price-value">$19.00 <span class="system-currency">USD</span></div>
+								</div>
+							</div>
+							<div class="moment-pack-image-container">
+								<a href="store.html">
+									<div class="moment-pack-image-1"><img src="images/theme/nwl/pack3-mcd.png" alt=""></div>
+									<div class="moment-pack-image-2"><img src="images/theme/nwl/pack3-mcd.png" alt=""></div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+	<!-- Pack Drop Email -->
+	<section id="packdrop-signup">
+		<div class="page-width">
+			<div id="packdrop-signup-inner">
+
+				<div class="packdrop-accent-1"><span class="icon_stripe"></div>
+				<div class="packdrop-accent-2"><span class="icon_cross"></div>
+
+				<div class="section-header text-align-center">
+					<h2 class="section-title">Never miss a Pack Drop!</h2>
+					<p class="section-helper">Keep up to date on all the latest news and releases and make sure you never miss a pack drop.</p>
+				</div>
+
+				<div class="section-content text-align-center">
+					*** Sendgrid Form Here ***
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+	<footer id="footer">
+		<div class="page-width">
+			<div id="footer-inner">
+				<div class="footer-content">
+					<div class="grid-2_sm-1">
+						<div class="col-4_sm-12">
+							<div class="footer-logo">
+								<a href="index.html" title="Click to Go Home">
+									<span class="icon_logo_clipcards_knockout"></span>
+								</a>
+							</div>
+							<div class="footer-partner">
+								<a href="index.html" title="Click to visit NuarcaLabs">
+									<span class="icon_nuarca_labs"></span>
+								</a>
+							</div>
+							<div class="footer-copyright-text">
+								&copy; Copyright 2021 Clip Cards Ltd. <br/>All Rights Reserved
+							</div>
+						</div>
+						<div class="col-8_sm-12">
+							<div id="footer-links-container" class="grid-4_sm-2">
+								<div class="col-3_sm-6">
+									<div class="footer-title">Product</div>
+									<ul class="footer-links list-reset">
+										<li><a href="store.html">Store</a></li>
+										<li><a href="marketplace.html">Marketplace</a></li>
+										<li><a href="press.html">Press</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Company</div>
+									<ul class="footer-links list-reset">
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="terms_conditions.html">Terms &amp; Conditions</a></li>
+										<li><a href="privacy.html">Privacy Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Help</div>
+									<ul class="footer-links list-reset">
+										<li><a href="how_it_works.html">How it works</a></li>
+										<li><a href="faqs.html">FAQs</a></li>
+										<li><a href="feedback.html">Feedback Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Social</div>
+									<ul class="footer-links list-reset">
+										<li><a href="#" class="link-twitter" target="_blank"><span class="lab la-twitter"></span>Twitter</a></li>
+										<li><a href="#" class="link-facebook" target="_blank"><span class="lab la-facebook-f"></span>Facebook</a></li>
+										<li><a href="#" class="link-discord" target="_blank"><span class="lab la-discord"></span>Discord</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-legal">
+					<p>Officially licensed product. <a href="#">Do Not Sell My Personal Information</a>.</p>
+					<p>This site is protected by reCAPTCHA and the Google <a href="privacy.html">Privacy Policy</a> and <a href="terms_conditions.html">Terms of Service</a> apply.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script type="text/javascript" src="js/dialogs.js" ></script>
+
+
+	
+
+
+	<!-- Dialog -->
+	<div class="dialog" id="dialog-login">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container width-sm">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Member Login</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-body">
+	  			<p>** A2D Azure Widget **</p>
+	  		</div>
+	  		
+	  	</div>
+	</div>
+
+	
+	
+	<script>
+		fixedHeaderScroll();
+	</script>
+</body>
+</html>

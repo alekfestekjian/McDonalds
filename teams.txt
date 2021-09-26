@@ -1,0 +1,162 @@
+<div class="league-grid">
+	<!-- Northwoods League -->
+	<div class="grid-6_md-6_sm-4-noGutter-center">
+
+		<div class="col-12">
+			<div class="division-divider"><span>Great Plains Division</span></div>
+		</div>
+
+		<!-- Great Plains -->
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Bismark Larks.png" alt="Bismark Larks"></div></div>
+				<div class="team-tooltip">Bismark Larks</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Duluth Huskies.png" alt="Duluth Huskies"></div></div>
+				<div class="team-tooltip">Duluth Huskies</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Eau Claire Express.png" alt="Eau Claire Express"></div></div>
+				<div class="team-tooltip">Eau Claire Express</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Mankato Moondogs.png" alt="Mankato Moondogs"></div></div>
+				<div class="team-tooltip">Mankato Moondogs</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/La Crosse Loggers.png" alt="La Crosse Loggers"></div></div>
+				<div class="team-tooltip">La Crosse Loggers</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Minnesota Mud Puppies.png" alt="Minnesota Mud Puppies"></div></div>
+				<div class="team-tooltip">Minnesota Mud Puppies</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Rochester Honkers.png" alt="Rochester Honkers"></div></div>
+				<div class="team-tooltip">Rochester Honkers</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/St Cloud Rox.png" alt="St Cloud Rox"></div></div>
+				<div class="team-tooltip">St Cloud Rox</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Thunder Bay Border Cats.png" alt="Thunder Bay Border Cats"></div></div>
+				<div class="team-tooltip">Thunder Bay Border Cats</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Waterloo Bucks.png" alt="Waterloo Bucks"></div></div>
+				<div class="team-tooltip">Waterloo Bucks</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Willmar Stingers.png" alt="Willmar Stingers"></div></div>
+				<div class="team-tooltip">Willmar Stingers</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/St Croic Riverhounds.png" alt="St Croic River Hounds"></div></div>
+				<div class="team-tooltip">St Croic River Hounds</div>
+			</a>
+		</div>
+
+
+		<div class="col-12">
+			<div class="division-divider"><span>Great Lakes Division</span></div>
+		</div>
+
+		<!-- Great Lakes -->
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Battle Creek Bombers.png" alt="Battle Creek Bombers"></div></div>
+				<div class="team-tooltip">Battle Creek Bombers</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Fond du Lac Dock Spiders.png" alt="Fond du Lac Dock Spiders"></div></div>
+				<div class="team-tooltip">Fond du Lac Dock Spiders</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Green Bay Booyah.png" alt="Green Bay Booyah"></div></div>
+				<div class="team-tooltip">Green Bay Booyah</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Kalamazoo Growlers.png" alt="Kalamazoo Growlers"></div></div>
+				<div class="team-tooltip">Kalamazoo Growlers</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Kenosha Kingfish.png" alt="Kenosha Kingfish"></div></div>
+				<div class="team-tooltip">Kenosha Kingfish</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Kokomo Jackrabbits.png" alt="Kokomo Jackrabbits"></div></div>
+				<div class="team-tooltip">Kokomo Jackrabbits</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Lakeshore Chinooks.png" alt="Lakeshore Chinooks"></div></div>
+				<div class="team-tooltip">Lakeshore Chinooks</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Madison Mallards.png" alt="Madison Mallards"></div></div>
+				<div class="team-tooltip">Madison Mallards</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Rockford Rivets.png" alt="Rockford Rivets"></div></div>
+				<div class="team-tooltip">Rockford Rivets</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Traverse City Pitspitters.png" alt="Traverse City Pitspitters"></div></div>
+				<div class="team-tooltip">Traverse City Pitspitters</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Wisconsin Rafters.png" alt="Wisconsin Rapids Rafters"></div></div>
+				<div class="team-tooltip">Wisconsin Rapids Rafters</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="team-details.html" class="team-container">
+				<div class="team-logo"><div class="team-logo-image"><img src="images/theme/nwl/teams/Wisconsin Woodchucks.png" alt="Wisconsin Woodchucks"></div></div>
+				<div class="team-tooltip">Wisconsin Woodchucks</div>
+			</a>
+		</div>
+	</div>
+</div>

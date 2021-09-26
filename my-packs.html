@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-control" content="public">
+	<meta name="description" content="Myodis Portal" />
+	<title>Myodis Portal</title>
+
+	<!-- CSS -->
+	<link href="css/core.css" rel="stylesheet" defer />
+
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" defer>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" defer>
+	
+	<!-- Line Awesome -->
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" defer>
+
+
+
+</head>
+<body>
+
+	<header id="header">
+
+		<div id="header-bar" class="skin-inverted fixed">
+			<div class="page-width">
+				
+				<div id="header-bar-inner">
+
+					<!-- Header Logo -->
+					<div id="header-logo">
+						<a href="index.html" title="Click to Go Home">
+							<img src="images/theme/nwl/logo.png" alt="Logo" />
+							<!-- <span class="icon_logo_clipcards_knockout"></span> -->
+						</a>
+					</div>
+
+					<div id="header-menu-trigger">
+						<button type="button" class="btn-default" id="btn-toggle-nav" onclick="toggleNav();">
+							<span class="btn-icon"><i class="las la-bars"></i></span>
+							<span class="btn-text sr-only">Menu</span>
+						</button>
+					</div>
+					
+					<!-- Navigation  -->
+					<div id="header-navigation" class="clearfix">
+						<div id="header-main-nav">
+							<ul>
+								<li><a class="nav-link" href="index.html">Home</a></li>
+								<li><a class="nav-link selected" href="my-cards.html">My Cards</a></li>
+								<li><a class="nav-link" href="store.html">Store</a></li>
+								<li><a class="nav-link" href="marketplace.html">Marketplace</a></li>
+								<!-- <li><a class="nav-link" href="how-it-works.html">How it works</a></li> -->
+								<li><a class="nav-link" href="faqs.html">FAQs</a></li>
+							</ul>
+						</div>
+
+						<div id="header-member-nav" style="display: none;">
+							<ul>
+								<li>
+									<button type="button" class="btn-default btn-outline" id="btn-login">
+										<span class="btn-text">Login</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn-default btn-secondary" id="btn-register">
+										<span class="btn-text">Register</span>
+									</button>
+								</li>
+							</ul>
+						</div>
+
+
+
+						<!-- Members Area  -->
+						<div id="header-member" style="display: block;">
+							<div class="member-container">
+								<div class="member-link">
+									<a href="javascript:void(0);" class="member-link" onclick="toggleDropdown('member-options',this);">
+										<div class="member-avatar">
+											<img src="images/member/member-profile.jpg" alt="Profile Image" />
+										</div>
+										<div class="member-content">
+											<div class="member-name">McChickenFan83</div>
+											<!-- <div class="member-rank">Collector</div> -->
+										</div>
+									</a>
+								</div>
+								<div class="member-options" id="member-options" style="display: none;">
+									<ul>
+										<li><a href="my-cards.html">My Cards <span class="item-count">9</span></a></li>
+										<li><a href="my-packs.html">My Packs <span class="item-count">0</span></a></li>
+										<li><a href="my-challenges.html">Challenges <span class="item-count">3</span></a></li>
+										<li><a href="my-buy-sell.html">Buy &amp; Sell</a></li>
+										<li><a href="my-wallet.html">My Wallet</a></li>
+										<li><a href="my-profile.html">My Profile</a></li>
+										<li><a href="index.html">Logout</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div id="header-menu-close" class="hidden">
+							<button type="button" class="btn-default" id="btn-close-nav" onclick="toggleNav();">
+								<span class="btn-icon"><i class="las la-times"></i></span>
+								<span class="btn-text sr-only">Close</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+
+	<section id="page-headline" class="use-theme-color"> 
+		<div class="bg-color"></div>
+		<div class="bg-image"></div>
+		<div class="bg-accent-shadow-1"></div>
+		<div class="bg-accent-shadow-2"></div>
+		<div class="bg-accent-shadow-3"></div>
+		<div class="bg-shading"></div>
+
+		<div class="page-headline-inner no-bottom-padding">
+		
+			<div class="page-width">
+
+
+						<div class="user-header-container">
+							<div class="user-header-links">
+								<ul class="list-reset list-inline">
+									<li class="margin-right-m">
+										<button type="button" class="btn-default btn-no-horizontal-padding" data-dialog="dialog-share">
+											<span class="btn-text">Share</span>
+											<span class="btn-icon"><em class="las la-share-square"></em></span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn-default btn-no-horizontal-padding" onclick="window.location='my-profile.html'">
+											<span class="btn-text">Edit Profile</span>
+											<span class="btn-icon"><em class="las la-user-alt"></em></span>
+										</button>
+									</li>
+								</ul>
+							</div>
+							<div class="user-header-avatar">
+								<div class="user-header-avatar-image">
+									<img src="images/member/member-profile.jpg" alt="Profile Image" />
+								</div>
+								
+							</div>
+							<div class="user-header-content">
+								<div class="user-header-username">@McChickenFan83</div>
+								<div class="user-header-realname">Alex Anderson</div>
+								<div class="user-header-attributes">
+									<!-- Not Needed for MVP -->
+									<!--
+									<ul id="user-header-attributes-list" class="list-reset list-inline">
+										<li>
+											<div class="attribute-container">
+												<span class="attribute-icon"><em class="las la-trophy"></em></span>
+												<span class="attribute-text">Achievements:</span>
+												<span class="attribute-count">4</span>
+											</div>
+										</li>
+										<li>
+											<div class="attribute-container">
+												<span class="attribute-icon"><em class="las la-medal"></em></span>
+												<span class="attribute-text">Rating:</span>
+												<span class="attribute-count">Collector</span>
+											</div>
+										</li>
+									</ul>
+									-->
+								</div>
+							</div>
+							<div class="user-header-tabs">
+								<ul class="tab-list">
+									<li><a href="my-cards.html" class="tab-link">My Cards</a></li>
+									<li><a href="my-packs.html" class="tab-link selected">My Packs</a></li>
+									<li><a href="my-challenges.html" class="tab-link">Challenges</a></li> 
+									<!-- <li><a href="my-wallet.html" class="tab-link">My Wallet</a></li>  -->
+									<li><a href="my-buy-sell.html" class="tab-link">Buy / Sell</a></li> <!-- Not needed for MVP -->
+								</ul>
+							</div>
+						</div>
+					
+					
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<!-- Page Content -->
+	<section id="page-content">
+
+		<div class="page-width">
+			<div id="page-content-inner">
+				
+
+				<div id="page-content-header">
+					<div class="grid-spaceBetween-middle">
+						<div class="col-auto">
+							<h1 class="page-title">My Packs</h1>
+						</div>
+					</div>
+				</div>
+
+				<div id="page-content-body">
+
+
+					<!-- Pack Content -->
+					<div class="grid">
+						<div class="col-12">
+
+							<!-- My Cards Placeholder -->
+							<div class="placeholder-msg" id="no-items-in-my-cards">
+								<div class="inline-msg-icon"><em class="las la-info-circle"></em></div>
+								<div class="inline-msg-text">
+									<h3 class="inline-msg-title">No packs found</h3>
+									<p>You have no unopened packs available, please visit the <a href="store.html">store</a> to purchase one now.</p>
+								</div>
+							</div>
+
+							<!-- My Packs -->
+						
+							<div class="margin-bottom-xl"></div>
+						</div>
+					</div>
+					<div class="padding-vertical-xl"></div>
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+	<footer id="footer">
+		<div class="page-width">
+			<div id="footer-inner">
+				<div class="footer-content">
+					<div class="grid-2_sm-1">
+						<div class="col-4_sm-12">
+							<div class="footer-logo">
+								<a href="index.html" title="Click to Go Home">
+									<span class="icon_logo_clipcards_knockout"></span>
+								</a>
+							</div>
+							<div class="footer-partner">
+								<a href="index.html" title="Click to visit NuarcaLabs">
+									<span class="icon_nuarca_labs"></span>
+								</a>
+							</div>
+							<div class="footer-copyright-text">
+								&copy; Copyright 2021 Clip Cards Ltd. <br/>All Rights Reserved
+							</div>
+						</div>
+						<div class="col-8_sm-12">
+							<div id="footer-links-container" class="grid-4_sm-2">
+								<div class="col-3_sm-6">
+									<div class="footer-title">Product</div>
+									<ul class="footer-links list-reset">
+										<li><a href="store.html">Store</a></li>
+										<li><a href="marketplace.html">Marketplace</a></li>
+										<li><a href="press.html">Press</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Company</div>
+									<ul class="footer-links list-reset">
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="terms_conditions.html">Terms &amp; Conditions</a></li>
+										<li><a href="privacy.html">Privacy Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Help</div>
+									<ul class="footer-links list-reset">
+										<li><a href="how_it_works.html">How it works</a></li>
+										<li><a href="faqs.html">FAQs</a></li>
+										<li><a href="feedback.html">Feedback Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Social</div>
+									<ul class="footer-links list-reset">
+										<li><a href="#" class="link-twitter" target="_blank"><span class="lab la-twitter"></span>Twitter</a></li>
+										<li><a href="#" class="link-facebook" target="_blank"><span class="lab la-facebook-f"></span>Facebook</a></li>
+										<li><a href="#" class="link-discord" target="_blank"><span class="lab la-discord"></span>Discord</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-legal">
+					<p>Officially licensed product. <a href="#">Do Not Sell My Personal Information</a>.</p>
+					<p>This site is protected by reCAPTCHA and the Google <a href="privacy.html">Privacy Policy</a> and <a href="terms_conditions.html">Terms of Service</a> apply.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	
+	<!-- Dialog -->
+	<div class="dialog" id="dialog-share">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Share Page</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  			<p class="dialog-helper">Select where you would like to share this page too:</p>
+	  		</div>
+	  		<div class="dialog-body">
+	  			
+	  			<div class="grid">
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-full-width btn-twitter margin-vertical-xs">
+	  						<span class="btn-icon"><em class="lab la-twitter"></em></span>
+			  				<span class="btn-text">Twitter</span>
+			  			</button>
+	  				</div>
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-full-width btn-discord margin-vertical-xs">
+	  						<span class="btn-icon"><em class="lab la-discord"></em></span>
+			  				<span class="btn-text">Discord</span>
+			  			</button>
+	  				</div>
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-outline btn-full-width margin-vertical-xs">
+	  						<span class="btn-icon"><em class="las la-at"></em></span>
+			  				<span class="btn-text">Email</span>
+			  			</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		
+	  	</div>
+	</div>
+
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script type="text/javascript" src="js/dialogs.js" ></script>
+
+</body>
+</html>

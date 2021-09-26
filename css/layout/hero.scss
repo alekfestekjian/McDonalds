@@ -1,0 +1,418 @@
+#hero-container {
+
+	background-image: url($theme-images-pathway + '/hero.jpg');
+	background-position:center center;
+	background-size:auto 100%;
+	background-repeat: no-repeat;
+	background-color: $header-background-color;
+	min-height: 48rem;
+
+	#header-image-shading {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom:0;
+		max-height:48rem;
+		z-index: 0;
+		margin:0 auto;
+		max-width: 90rem;
+
+		
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 10rem;
+			background-color: rgba(red,0.5);
+			z-index: 2;
+			background: linear-gradient(270deg, rgba($header-background-color,0) 0%, rgba($header-background-color,1) 100%);
+			display: none;
+
+			@media #{$breakpoint-lg-up} {
+				display: block;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 10rem;
+			background-color: rgba(blue,0.5);
+			z-index: 2;
+			background: linear-gradient(90deg, rgba($header-background-color,0) 0%, rgba($header-background-color,1) 100%);
+			display: none;
+
+			@media #{$breakpoint-lg-up} {
+				display: block;
+			}
+		}
+	}
+}
+
+#header-hero {
+	color:white;
+	padding-top: 2rem;
+
+	@media #{$breakpoint-md-up} {
+		padding-top: 8rem;
+	}
+
+	#header-hero-inner {
+
+		#header-hero-text {
+			float: none;
+			width: auto;
+			padding-bottom: 2rem;
+			text-align: center;
+			padding-top: 2rem;
+
+
+			@media #{$breakpoint-sm-up} {
+				width: calc((100% / 12)* 10);
+				margin-left: calc(100% / 12);
+				text-align: left;
+			}
+
+			@media #{$breakpoint-md-up} {
+				width: calc((50% / 12)* 10);
+				margin-left: calc(100% / 12);
+				float: left;
+				position: relative;
+				z-index: 10;
+			}
+
+
+
+			h1.hero-title {
+				color: $hero-title-color;
+				font-size:2rem;
+				line-height: 1.25;
+				text-transform: uppercase;
+				font-weight: 900;
+				margin-bottom: 2rem;
+				text-shadow: 0.125rem 1rem 1rem $hero-title-shadow;
+
+				@media #{$breakpoint-md-up} {
+					font-size:2.25rem;
+				}
+
+
+				b, strong {
+					line-height: 1;
+					display: block;
+					font-size:3rem;
+
+					@media #{$breakpoint-md-up} {
+						font-size:4rem;
+					}
+				}
+			}
+
+			p {
+				font-size: 1.125rem;
+				line-height: 1.5;
+				color: $hero-title-color;
+				text-shadow: 0.125rem 0.125rem 0.25rem darken($hero-title-shadow, 20%);
+			}
+
+			.header-hero-buttons {
+				margin-top: 2rem;
+
+				button {
+					&.btn-link {
+						color: $hero-title-color;
+					}
+				}
+			}
+		}
+
+		#header-hero-image {
+			width: auto;
+			float: none;
+
+			@media #{$breakpoint-md-up} {
+				width: 50%;
+				float: right;
+			}
+		}
+	}
+
+}
+
+
+.header-hero-container {
+	position: relative;
+	height: 28rem;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	// overflow: hidden;
+
+	@media #{$breakpoint-lg-up} {
+		height: 32rem;
+		margin-left: inherit;
+		margin-right: inherit;
+		overflow: visible;
+	}
+
+	.hero-background {
+		position: absolute;
+		left: 10%;
+		top: 10%;
+		right: 15%;
+		bottom:15%;
+		background-color: $hero-background-box-color;
+		animation: fadeIn 0.5s 1 ease-in-out normal;
+	}
+
+	.hero-pack-1 {
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include translate(-50%, -50%);
+		z-index: 8;
+		box-shadow: 0 0 24rem rgba($black,0.5),0 0 24rem rgba($black,0.5) inset;
+		transform-origin: bottom center;
+		animation: pivotPackCenter 0.5s 1 ease-in-out normal, hoverPackCenter 5s 0.5s infinite ease-in-out normal;
+		width: 173px;
+		height: 250px;
+		
+		@media #{$breakpoint-lg-up} {
+			width: 260px;
+			height: 376px;
+		}
+
+		img {
+			vertical-align: top;
+			height: 100%;
+		}
+	}
+
+	.hero-pack-2 {
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include translate(-50%, -50%);
+		z-index: 7;
+		box-shadow: 0 0 24rem rgba($black,0.5),0 0 24rem rgba($black,0.5) inset;
+		transform-origin: bottom left;
+		animation: pivotPackLeft 0.5s 1 ease-in-out normal, hoverPackLeft 5s 0.5s infinite ease-in-out normal;
+		width: 173px;
+		height: 250px;
+		
+		@media #{$breakpoint-lg-up} {
+			width: 260px;
+			height: 376px;
+		}
+
+		img {
+			vertical-align: top;
+			height: 100%;
+		}
+	}
+
+	.hero-pack-3 {
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 6;
+		@include translate(-50%, -50%);
+		box-shadow: 0 0 24rem rgba($black,0.5),0 0 24rem rgba($black,0.5) inset;
+		animation: pivotPackRight 0.5s 1 ease-in-out normal, hoverPackRight 5s 0.5s infinite ease-in-out normal;
+		transform-origin: bottom right;
+		width: 173px;
+		height: 250px;
+
+		@media #{$breakpoint-lg-up} {
+			width: 260px;
+			height: 376px;
+		}
+
+		img {
+			vertical-align: top;
+			height: 100%;
+		}
+	}
+
+	.hero-splatter-1 {
+		font-size: 15rem;
+		position: absolute;
+		left: 50%;
+		top:0%;
+		z-index: 2;
+		margin-left: 7.5rem;
+		@include translate(-50%, 0%);
+		animation: fadeIn 0.5s 1 ease-in-out normal;
+		color: $hero-splatter-1-color;
+
+		@media #{$breakpoint-xs-only} {
+			left: 33%;
+		}
+	}
+
+	.hero-splatter-2 {
+		font-size: 20rem;
+		position: absolute;
+		left: 50%;
+		bottom:10%;
+		z-index: 2;
+		@include translate(-50%, -10%);
+		margin-left: -10rem;
+		animation: fadeIn 0.5s 1 ease-in-out normal;
+		color: $hero-splatter-1-color;
+
+	}
+
+	.hero-brushstroke {
+		font-size: 4rem;
+		position: absolute;
+		z-index: 2;
+		transform-origin: center center;
+		left: 50%;
+		bottom: 0%;
+		transform: translate(-50%, -10%) rotate(-15deg);
+		animation: fadeIn 0.5s 1 ease-in-out normal;
+		color: $hero-brushstroke-color;
+
+		@media #{$breakpoint-lg-up} {
+			font-size: 8rem;
+		}
+	}
+
+	.hero-cube-1 {
+		background-color: $hero-cube-1-color;
+		position: absolute;
+		height: 8rem;
+		width: 4rem;
+		left: 50%;
+		bottom:35%;
+		@include translate(-50%, -35%);
+		margin-left: 9rem;
+		z-index: 2;
+		animation: fadeIn 0.5s 1 ease-in-out normal;
+
+		@media #{$breakpoint-md-up} {
+			margin-left: 13rem;
+		}
+	}
+
+	.hero-cube-2 {
+		background-color: $hero-cube-2-color;
+		position: absolute;
+		height: 2rem;
+		width: 6rem;
+		left: 50%;
+		@include translate(-50%, -10%);
+		margin-left: 6rem;
+		bottom:10%;
+		z-index: 3;
+		animation: fadeIn 0.5s 1 ease-in-out normal;
+	}
+
+	.hero-accent-1 {
+		position: absolute;
+		font-size: 6rem;
+		left: 50%;
+		bottom:5%;
+		@include translate(-50%, -5%);
+		z-index: 3;
+		color: $hero-accent-1-color;
+		animation: fadeIn 0.5s 1 ease-in-out normal;
+		margin-left: -8rem;
+		
+		@media #{$breakpoint-md-up} {
+			margin-left: -13rem;
+		}
+	}
+
+	.hero-accent-2 {
+		position: absolute;
+		font-size: 3rem;
+		left: 50%;
+		bottom:8%;
+		@include translate(-50%, -8%);
+		margin-left: -8rem;
+		z-index: 1;
+		color: $hero-accent-2-color;
+		animation: fadeIn 0.5s 1 ease-in-out normal;
+
+		@media #{$breakpoint-md-up} {
+			margin-left: -15rem;
+		}
+	}
+
+	.hero-accent-3 {
+		position: absolute;
+		font-size: 4rem;
+		left: 50%;
+		@include translate(-50%, -10%);
+		margin-left: 8rem;
+		bottom:10%;
+		z-index: 9;
+		color: $hero-accent-3-color;
+		animation: fadeIn 0.5s 1 ease-in-out normal;
+
+		@media #{$breakpoint-md-up} {
+			font-size: 6rem;
+			margin-left: 15rem;
+		}
+	}
+}
+
+@keyframes grow {
+	0% {transform: scale(0.5); opacity: 0;}
+	100% {transform: scale(1.0); opacity: 1;}
+}
+
+
+@keyframes fadeIn {
+	0% {opacity: 0; }
+	100% {opacity: 1;}
+}
+
+
+
+
+
+@keyframes pivotPackCenter {
+	0% {transform: rotate(0) translate(-50%, -40%) scale(0.5);}
+	100% {transform: rotate(0deg) translate(-50%, -50%) scale(1.0);}
+}
+
+@keyframes hoverPackCenter{
+	0% {transform: rotate(0deg) translate(-50%, -50%) scale(1.0);}
+	50% {transform: rotate(0deg) translate(-50%, -49%) scale(1.0);}
+	100% {transform: rotate(0deg) translate(-50%, -50%) scale(1.0);}
+}
+
+@keyframes pivotPackLeft {
+	0% {transform: rotate(0) translate(-50%, -50%) scale(0.5);}
+	100% {transform: rotate(-15deg) translate(-50%, -50%) scale(1.0);}
+}
+
+
+@keyframes hoverPackLeft{
+	0% {transform: rotate(-15deg) translate(-50%, -50%) scale(1.0);}
+	50% {transform: rotate(-15deg) translate(-50%, -48%) scale(1.0);}
+	100% {transform: rotate(-15deg) translate(-50%, -50%) scale(1.0);}
+}
+
+@keyframes pivotPackRight {
+	0% { transform: rotate(0) translate(-50%, -50%) scale(0.5); }
+	100% {transform: rotate(15deg) translate(-50%, -40%) scale(1.0);}
+}
+
+@keyframes hoverPackRight{
+	0% {transform: rotate(15deg) translate(-50%, -40%) scale(1.0);}
+	50% {transform: rotate(15deg) translate(-50%, -42%) scale(1.0);}
+	100% {transform: rotate(15deg) translate(-50%, -40%) scale(1.0);}
+}

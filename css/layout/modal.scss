@@ -1,0 +1,94 @@
+/* Modal used for showing NFT */
+
+dialog {
+	background-color:transparent;
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+#overlay {
+	background-color: rgba($overlay-background, 0.98);
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	@include opacity(0); 
+	@include transition(opacity .3s ease);
+	z-index: -1;
+
+	&.visible {
+		@include opacity(1);
+		z-index: 100;
+		overflow: auto;
+	}
+}
+
+
+.modal-container {
+	position: absolute;
+	left: 50%;
+	top: 0%;
+	color: $modal-light-color;
+	z-index: 101;
+	width: 90%;
+	max-width: 60rem;
+	@include opacity(0); 
+	transition: opacity .3s ease, top .3s ease;
+	z-index: -1;
+	display: block;
+	transform: translate(-50%,0);
+	transform-origin: center center;
+	@include box-sizing(border-box);
+	padding-bottom: 5%;
+
+	@media #{$breakpoint-md-up} {
+		transform: translate(-50%,-50%);
+		top: 60%;
+	}
+
+	&.active {
+		@include opacity(1);
+		transform: translate(-50%,0);
+		z-index: 100;
+		top: 5%;
+		left: 50%;
+
+		@media #{$breakpoint-md-up} {
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;
+		}
+	}
+
+	.modal-body {
+		border:1px solid rgba($black,0.1);
+		@include box-shadow(0, 0, 2rem, rgba($black,0.8));
+		background-color: $modal-light-background;
+		position: relative;
+	}
+
+	&.modal-dark {
+		color: $modal-dark-color;
+
+		.modal-body {
+			background-color: $modal-dark-background;
+			border:1px solid rgba($white,0.1);
+			@include box-shadow(0, 0, 2rem, rgba($black,0.8));
+		}
+	}
+}
+
+
+.modal-content {
+	padding: 2rem;
+	z-index: 1;
+
+	@media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+	    padding:1rem;
+	}
+}
+
+
+

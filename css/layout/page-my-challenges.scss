@@ -1,0 +1,135 @@
+#challenges {
+	margin: 1rem 0;
+	
+	@media #{$breakpoint-xs-only} {
+		display: none;
+	}
+
+	@media #{$breakpoint-sm-up} {
+		display: block !important;
+	}
+}
+
+
+.challenge-container {
+	a.challenge-link {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+		position: relative;
+		padding: 1rem 0;
+		
+		&:hover {
+			@media #{$breakpoint-lg-up} {
+				.challenge-content {
+					.challenge-title {
+						text-decoration: underline;
+					}
+				}
+
+				.challenge-image {
+					left: -0.25rem;
+					top: 0.75rem;
+					width: 7.5rem;
+					bottom:-0.25rem;
+				}
+			}
+		}
+
+		.challenge-image {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 1rem;
+			width: 7rem;
+			overflow: hidden;
+			@include transition(all .3s ease);
+
+			img {
+				width: 100%;
+				vertical-align: middle;
+			}
+		}
+
+		.challenge-content {
+			display: block;
+			margin-left: 8rem;
+			position: relative;
+
+			.challgen-time {
+				display: block;
+				font-weight: 600;
+				line-height: 1.25rem;
+			}
+
+			.challenge-access {
+				display: block;
+				position: absolute;
+				right: 0;
+				top: 0;
+				text-transform: uppercase;
+				font-size: 0.75rem;
+				border:1px solid currentColor;
+				padding:calc(0.125rem - 1px) 0.5rem;
+				@include border-radius(2rem);
+				line-height:1.0rem;
+				font-weight: 500;
+
+
+				&.open-to-all {
+					color: $mid-grey;
+					border:1px solid currentColor;
+				}
+
+				&.restricted {
+					color: $red;
+					border:1px solid currentColor;
+				}
+			}
+
+			.challenge-title {
+				display: block;
+				margin:0.5rem 0;
+				font-size:1.25rem;
+				font-weight: 600;;
+				line-height: 1.5rem;
+			}
+
+			.challenge-description {
+				display: block;
+				line-height: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.challenge-progress {
+				display: block;
+
+				.challenge-bar-container {
+					display: block;
+					background-color: $light-grey;
+					position: relative;
+					min-height: 0.5rem;
+					@include border-radius(2rem);
+
+					.challenge-bar-value {
+						display: block;
+						background-color: $theme-color-1;
+						position: absolute;
+						left: 0;
+						top: 0;
+						bottom: 0;
+						@include border-radius(2rem);
+					}
+				}
+
+				.challenge-bar-text {
+					display: block;
+					color: $theme-color-1;
+					line-height: 1.5rem;
+					margin-top: 0.5rem;
+					font-weight:500;
+				}
+			}
+		}
+	}
+}

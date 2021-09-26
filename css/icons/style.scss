@@ -1,0 +1,105 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?e2vgx2');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?e2vgx2#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?e2vgx2') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?e2vgx2') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?e2vgx2##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon_"], [class*=" icon_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_play {
+  &:before {
+    content: $icon_play; 
+  }
+}
+.icon_repeat {
+  &:before {
+    content: $icon_repeat; 
+  }
+}
+.icon_pause {
+  &:before {
+    content: $icon_pause; 
+  }
+}
+.icon_nuarca_labs {
+  &:before {
+    content: $icon_nuarca_labs; 
+  }
+}
+.icon_arrows {
+  &:before {
+    content: $icon_arrows; 
+  }
+}
+.icon_stripe {
+  &:before {
+    content: $icon_stripe; 
+  }
+}
+.icon_cross {
+  &:before {
+    content: $icon_cross; 
+  }
+}
+.icon_zigzag {
+  &:before {
+    content: $icon_zigzag; 
+  }
+}
+.icon_brush_stroke {
+  &:before {
+    content: $icon_brush_stroke; 
+  }
+}
+.icon_splatter_1 {
+  &:before {
+    content: $icon_splatter_1; 
+  }
+}
+.icon_splatter_2 {
+  &:before {
+    content: $icon_splatter_2; 
+  }
+}
+.icon_logo_clipcards_knockout {
+  &:before {
+    content: $icon_logo_clipcards_knockout; 
+  }
+}
+.icon_logo_clipcards_layer1 {
+  &:before {
+    content: $icon_logo_clipcards_layer1; 
+  }
+}
+.icon_logo_clipcards_layer2 {
+  &:before {
+    content: $icon_logo_clipcards_layer2; 
+  }
+}
+.icon_logo_clipcards_layer3 {
+  &:before {
+    content: $icon_logo_clipcards_layer3; 
+  }
+}
+

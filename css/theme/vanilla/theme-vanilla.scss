@@ -1,0 +1,123 @@
+
+$theme-images-pathway: '../images/theme/vanilla' !default;
+
+// Colors
+$black: #000000 !default;
+$white: #FFFFFF !default;
+$red: #D52C20 !default;
+$orange: #FFA126 !default;
+$green: #37A954 !default;
+$blue: #16A0DB !default;
+$light-grey:#e3e3e3 !default;
+$mid-grey:#707070 !default;
+$dark-grey:#353535 !default;
+
+$theme-color-1: #797979 !default; 
+$theme-color-2: #000000 !default; 
+
+// Header Bar
+$header-bar-color: #000000 !default;
+$header-bar-color-inverted: #000000 !default;
+$header-bar-background-color: transparent !default; 
+$header-bar-background-color-inverted: $white !default;
+
+$header-background-color: #FFFFFF !default;  // This is the background color and bleed behind the header image
+
+// Navigation
+$nav-link-color: #000000 !default;
+$nav-link-color-hover: $theme-color-1 !default;
+
+$disabled-gray: #CCCCCC !default;
+
+
+// Hero Panel
+$hero-title-color: #000000 !default;
+$hero-title-shadow: rgba(#FFFFFF,0.8) !default;
+
+$hero-background-box-color:rgba(#000000,0.2) !default;
+$hero-splatter-1-color: rgba(#FFFFFF,0.5) !default;
+$hero-splatter-2-color:rgba(#FFFFFF,0.5) !default;
+$hero-brushstroke-color:rgba(#000000,0.25) !default;
+$hero-cube-1-color:$theme-color-1 !default;
+$hero-cube-2-color:$theme-color-2 !default;
+$hero-accent-1-color:#FFFFFF !default;
+$hero-accent-2-color:#000000 !default;
+$hero-accent-3-color:#FFFFFF !default;
+
+
+// Marketplace on Homepage
+$marketplace-background-color:#F8F8F8 !default;
+$card-type-le:#000000 !default;
+$card-type-cc:#939699 !default;
+$pack-type-color-1: #939699 !default;
+$pack-type-color-2: #F0B024 !default;
+$pack-type-color-3: #AD7FDD !default;
+
+
+$rarity-lvl5:#AD7FDD !default;
+$rarity-lvl4:#AD7FDD !default;
+$rarity-lvl3:#AD7FDD !default;
+$rarity-lvl2:#F0B024 !default;
+$rarity-lvl1:#939699 !default;
+
+
+// User Profile 
+$user-profile-color:#FFFFFF !default;
+$user-profile-bg:$theme-color-2 !default;
+
+
+// Pack Drop
+$packdrop-bg:#454545 !default;
+$packdrop-color:#FFFFFF !default;
+
+// Footer
+$footer-bg:#000000 !default;
+$footer-color:#FFFFFF !default;
+
+// Store
+$theme-accent-shadow: #000000 !default;
+$featured-pack-text-color: #FFFFFF !default;
+$featured-pack-bg-color: #353535 !default;
+
+$secondary-item-bg-color:#2E2C37 !default;
+$secondary-item-text-color:#FFFFFF !default;
+
+$dim-background: #2E2C37 !default;
+$dim-text-color: #FFFFFF !default;
+
+
+// Tabs
+$tab-active-bg: #FFFFFF !default;
+$tab-active-color: #232323 !default;
+
+
+// Table 
+$table-header-background: #EFEFEF !default;
+$table-header-color: #353535 !default;
+$table-row-hover: rgba($theme-color-1,0.1) !default;
+
+// Overlay
+$overlay-background:#19181D !default;
+$modal-light-color:#232229 !default;
+$modal-light-background:#FFFFFF !default;
+$modal-dark-color:#FFFFFF !default;
+$modal-dark-background:#232229 !default;
+
+// Buttons
+$btn-primary-background:$theme-color-1 !default;
+$btn-primary-border-color:$theme-color-1 !default;
+$btn-primary-font-color:$white !default;
+
+$btn-primary-outline-background:transparent !default;
+$btn-primary-outline-border-color:$theme-color-1 !default;
+$btn-primary-outline-font-color:$theme-color-1 !default;
+
+
+$btn-secondary-background:$theme-color-2 !default;
+$btn-secondary-border-color:$theme-color-2 !default;
+$btn-secondary-font-color:$white !default;
+
+$btn-secondary-outline-background:$white !default;
+$btn-secondary-outline-border-color:$theme-color-2 !default;
+$btn-secondary-outline-font-color:$theme-color-2 !default;
+

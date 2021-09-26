@@ -1,0 +1,1011 @@
+// Cards Carousel
+// ----------------------------------------------
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding:4rem 2rem 1rem 2rem;
+  position: relative;
+  
+  @media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+    padding:2rem 1rem;
+  }
+
+
+  .card-shadow {
+    position: absolute;
+    left: 50%;
+    bottom:10%;
+    @include translate(-50%,0);
+    z-index: 0;
+
+    font-size: 4rem;
+    position: absolute;
+    transform-origin: center center;
+    transform: translate(-50%, -10%) rotate(-15deg);
+    animation: fadeIn 0.5s 1 ease-in-out normal;
+    color: $hero-brushstroke-color;
+
+    @media #{$breakpoint-lg-up} {
+      font-size: 6rem;
+    }
+
+  }
+
+  .card-actions {
+    position: relative;
+    text-align: left;
+    opacity: 1;
+    @include transition(all .3s ease);
+    z-index: 1;
+    margin-top: 1rem;
+
+    &.hidden {
+      opacity: 0;
+    }
+
+    @media #{$breakpoint-xs-only}{
+    }
+  }
+
+}
+
+// Cards Carousel
+// ----------------------------------------------
+
+.cards {
+  position: relative;
+  width: 17.5rem;
+  height: 25rem;
+  max-width: 17.5rem;
+  max-height: 25rem;
+  margin: 0;
+  color: $white;
+  perspective: 40rem;
+  transform-origin: center;
+  z-index: 1;
+
+    @media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+      width: 15.75rem;
+      height: 22.5rem;
+      max-width: 15.75rem;
+      max-height: 22.5rem;
+    }
+
+
+
+
+  // This is the element that rotates with the animation
+
+  &__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    @include transition(all 1s cubic-bezier(0.75, 0, 0.25, 1));
+  }
+
+  // Individual cards
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 17.5rem;
+    height: 25rem;
+    max-width: 17.5rem;
+    max-height: 25rem;
+    box-shadow: 0 0.25rem 3rem rgba($black,0.4), 0 2rem 4rem rgba($black,0.4), 0 0.25rem 3rem rgba($black,0.8) inset;
+    transform-origin: center center;
+    @include border-radius(0.5rem);
+
+    @media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+      width: 15.75rem;
+      height: 22.5rem;
+      max-width: 15.75rem;
+      max-height: 22.5rem;
+    }
+
+    &:nth-child(1) {
+      transform: rotateY(0deg) translateZ(10rem) scale(0.75);
+
+      @media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+        transform: rotateY(0deg) translateZ(8rem) scale(0.75);
+      }
+    }
+
+    &:nth-child(2) {
+      transform: rotateY(90deg) translateZ(10rem) scale(0.75);
+
+      @media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+        transform: rotateY(90deg) translateZ(8rem) scale(0.75);
+      }
+    }
+
+    &:nth-child(3) {
+      transform: rotateY(180deg) translateZ(10rem) scale(0.75);
+
+      @media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+        transform: rotateY(180deg) translateZ(8rem) scale(0.75);
+      }
+    }
+
+    &:nth-child(4) {
+      transform: rotateY(270deg) translateZ(10rem) scale(0.75);
+
+      @media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+        transform: rotateY(270deg) translateZ(8rem) scale(0.75);
+      }
+    }
+  }
+}
+
+// Carousel animation for 3 slides
+@keyframes carousel {
+  0%    { transform: translateZ(-20rem) rotateY(0); }
+  25%   { transform: translateZ(-20rem) rotateY(-90deg); }
+  50%   { transform: translateZ(-20rem) rotateY(-180deg); }
+  75%   { transform: translateZ(-20rem) rotateY(-270deg); }
+  100%  { transform: translateZ(-20rem) rotateY(-360deg); }
+}
+
+
+.card-stats,
+.card-player,
+.card-team,
+.card-video {
+  height: 100%;
+  position: relative;
+}
+
+
+.card-player-front,
+.card-stats-front,
+.card-team-front,
+.card-video-front {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom:0;
+  height: 100%;
+  width: 100%;
+  @include border-radius(0.5rem);
+  // overflow: hidden;
+  display: block;
+}
+
+
+/* Player */
+.card-player-container {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      // max-width: 8rem;
+
+      @media #{$breakpoint-md-up} {
+        // max-width: 12rem; // This could be up to 14rem;
+      }
+
+      .card-player {
+        display: block;
+        perspective: 10rem;
+        position:relative;
+        left: 50%;
+        top: 0;
+        @include translate(-50%,0);
+        transform-origin: center center;
+        @include transition(all .3s ease);
+
+        .card-player-overlay {
+          position: absolute;
+          line-height: 0;
+          top: 0;
+          right: 0;
+          bottom:0;
+          left: 0;
+          // background-color:black;
+          z-index: 5;
+          transform: rotateX(0deg) rotateY(-4deg) translateZ(0.5rem);
+          @include border-radius(0.5rem);
+          @include transition(all .3s ease);
+          color: $white;
+          
+          @media #{$breakpoint-xs-only} {
+            font-size: 90%;
+          }
+          
+          @media #{$breakpoint-sm-only} {
+            font-size: 90%;
+          }
+
+          .card-player-details-position {
+            display: block;
+            position: absolute;
+            left: 7%;
+            top: 5%;
+            font-size: 200%;
+            font-weight:600;
+              line-height:100%;
+          }
+
+          .card-player-details-number {
+            display: block;
+            position: absolute;
+            left: 7%;
+            top: 5%;
+              -webkit-font-smoothing: antialiased;
+              font-size: 500%;
+              line-height:100%;
+            font-weight:600;
+              color:transparent;
+            -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+              -webkit-text-stroke-color: white;
+              @include opacity(0.5);
+          }
+
+          .card-player-details-rarity {
+            display: block;
+            position: absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            // top: 68%;
+            padding:32% 7% 7%;
+            text-align: left;
+            font-size: 100%;
+            line-height:100%;
+            font-weight: 600;
+            text-transform: uppercase;
+            vertical-align: bottom;
+            z-index: 2;
+
+            &.type-lvl5 {
+              color:$rarity-lvl5;
+
+              &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom:0;
+                top: 0;
+                right: 0;
+                background: url($theme-images-pathway + '/card-footer-lvl5.png') no-repeat;
+                background-size:contain;
+                @include image-2x($theme-images-pathway + '/card-footer-lvl5@2x.png', contain, auto);
+                background-position:center bottom;
+                @include border-radii(0,0,0.5rem,0.5rem);
+                overflow: hidden;
+                z-index: 1;
+              }
+            }
+
+            &.type-lvl4 {
+              color:$rarity-lvl4;
+
+              &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom:0;
+                top: 0;
+                right: 0;
+                background: url($theme-images-pathway + '/card-footer-lvl4.png') no-repeat;
+                background-size:contain;
+                @include image-2x($theme-images-pathway + '/card-footer-lvl4@2x.png', contain, auto);
+                background-position:center bottom;
+                @include border-radii(0,0,0.5rem,0.5rem);
+                overflow: hidden;
+                z-index: 1;
+              }
+            }
+
+            &.type-lvl3 {
+              color:$rarity-lvl3;
+
+              &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom:0;
+                top: 0;
+                right: 0;
+                background: url($theme-images-pathway + '/card-footer-lvl3.png') no-repeat;
+                background-size:contain;
+                @include image-2x($theme-images-pathway + '/card-footer-lvl3@2x.png', contain, auto);
+                background-position:center bottom;
+                @include border-radii(0,0,0.5rem,0.5rem);
+                overflow: hidden;
+                z-index: 1;
+              }
+            }
+
+            &.type-lvl2 {
+              color:$rarity-lvl2;
+
+              &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom:0;
+                top: 0;
+                right: 0;
+                background: url($theme-images-pathway + '/card-footer-lvl2.png') no-repeat;
+                background-size:contain;
+                @include image-2x($theme-images-pathway + '/card-footer-lvl2@2x.png', contain, auto);
+                background-position:center bottom;
+                @include border-radii(0,0,0.5rem,0.5rem);
+                overflow: hidden;
+                z-index: 1;
+              }
+            }
+
+            &.type-lvl1 {
+              color:$rarity-lvl1;
+
+              &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom:0;
+                top: 0;
+                right: 0;
+                background: url($theme-images-pathway + '/card-footer-lvl1.png') no-repeat;
+                background-size:contain;
+                @include image-2x($theme-images-pathway + '/card-footer-lvl1@2x.png', contain, auto);
+                background-position:center bottom;
+                @include border-radii(0,0,0.5rem,0.5rem);
+                overflow: hidden;
+                z-index: 1;
+              }
+
+            }
+          }
+
+          .card-player-details-name {
+            display: block;
+            position: absolute;
+            left:7%;
+            right:30%;
+            bottom: 11%;
+            text-align: left;
+            font-size: 120%;
+            line-height:120%;
+            font-weight: 600;
+            white-space:break-spaces;
+            z-index: 2;
+          }
+
+          .card-player-details-team-logo {
+            display: block;
+            position: absolute;
+            right: 7%;
+            bottom:5%;
+            width: 21%;
+
+            img {
+              width: 100%;
+              vertical-align: top;
+            }
+          }
+
+          .card-player-details-distribution {
+            right: 7%;
+            top:5%;
+            position: absolute;
+            text-align: right;
+
+            .card-player-details-distribution-value {
+              display: block;
+              line-height: 100%;
+              font-size: 125%;
+              font-weight: 500;
+
+              &:before {
+                content: '#';
+              }
+            }
+
+            .card-player-details-distribution-total {
+              display: none;
+              line-height: 100%;
+              font-weight: 500;
+              font-size: 80%;
+              @include opacity(0.75);
+
+              &:before {
+                content: '/';
+              }
+            }
+          }
+
+          .card-player-details-shading {
+            position: absolute;
+            left: 0;
+            bottom:0px;
+            right: 0;
+            top: 40%;
+            background: rgb(46,44,55);
+            background: linear-gradient(0deg, rgba(46,44,55,1) 0%, rgba(46,44,55,1) 40%, rgba(46,44,55,0) 100%);
+            @include border-radii(0,0,0.5rem,0.5rem);
+            vertical-align: bottom;
+            display: block;
+          }
+        }
+
+        img {
+          display: block;
+          vertical-align: top;
+          transform: rotateX(0deg) rotateY(-4deg) translateZ(0.5rem);
+          transform-style: preserve-3d;
+          @include border-radius(0.5rem);
+          z-index: 4;
+          position:relative;
+          @include box-shadow(0,0,1rem,rgba($black,0.1));
+          transform-origin: center center;
+          @include transition(all .3s ease);
+          width: 100%;
+          padding-bottom:1px;
+        }
+
+      }
+}
+
+/* Stats */
+.card-stats-container {
+  margin-top: 5%;
+
+  .card-stats-game {
+    text-align:center;
+    line-height: 120%;
+    font-weight: 600;
+  }
+
+  .card-stats-date {
+    text-align:center;
+    line-height: 120%;
+  }
+
+  .card-stats-location {
+    text-align:center;
+    line-height: 120%;
+  }
+
+
+  .card-stats-team {
+    text-align: center;
+    position: absolute;
+    width: 40%;
+
+    &.team-1 {
+      left: 5%;
+      top: 25%;
+    }
+
+    &.team-2 {
+      right: 5%;
+      top: 25%;
+    }
+
+    .card-stats-team-score {
+      font-size: 300%;
+      line-height: 100%;
+      font-weight: 600;
+    }
+
+    .card-stats-team-logo {
+      width: 80%;
+      margin:0 auto;
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+
+    .card-stats-team-abbr {
+      line-height: 120%;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 200%;
+    }
+
+    .card-stats-team-stats {
+      line-height: 120%;
+      @include opacity(0.75);
+    }
+  }
+
+  .card-stats-versus {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%,-50%);
+  }
+
+  .card-stats-full-time {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    @include translate(-50%,0);
+
+    span {
+      display: inline-block;
+      @include border-radius(10rem);
+      border:1px solid currentColor;
+      line-height: 150%;
+      font-weight: 600;
+      font-size: 75%;
+      text-transform: uppercase;
+      padding-left:0.5rem;
+      padding-right:0.5rem;
+      // white-space: nowrap;
+    }
+  }
+
+  .card-stats-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom:0;
+    z-index:-1;
+
+    img {
+      width: 100%;
+      vertical-align: top;
+      @include border-radius(0.5rem);
+    }
+  }
+}
+
+/* Team */
+.card-team-container {
+  display: block;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+
+  .card-team-background-color {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    @include border-radius(0.5rem);
+  }
+
+  .card-team-background-texture {
+    background-image: url($theme-images-pathway + '/bg-shading.png');
+    background-position:center top;
+    background-repeat: repeat-x;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom:0;
+    z-index: 2;
+    filter:contrast(5);
+    @include border-radius(0.5rem);
+
+  }
+
+  .card-team-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%,-50%);
+    width:80%;
+    z-index: 3;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .card-team-name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:5%;
+    text-align: center;
+    line-height: 120%;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+}
+
+/* Video */
+.card-video-container {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  .card-video-button {
+    height: 100%;
+    width: 100%;
+    z-index:1;
+    position:relative;
+
+    button {
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      transform: translate(-50%,0);
+      transform-origin: center center;
+      display: block;
+      margin:0;
+      @include border-radius(4rem);
+      text-align: center;
+      @include transition(all .3s ease);
+      height: 3rem;
+      width: auto;
+      background-color: rgba($black,0.3);
+      color: $white;
+      @include box-shadow (0,0,1rem,rgba($black,0.5));
+
+      .btn-icon {
+        vertical-align: top;
+        margin-right: 0.25rem;
+
+        span {
+          font-size: 1.0rem;
+          line-height: 1.5rem;
+        }
+      }
+
+      .btn-text {
+        vertical-align: top;
+      }
+
+      &:hover {
+        background-color: white;
+        color: $black;
+        transform: translate(-50%,0);
+      }
+    }
+  }
+
+  .card-video-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom:0;
+    z-index:-1;
+
+    img {
+      width: 100%;
+      vertical-align: top;
+      @include border-radius(0.5rem);
+    }
+  }
+
+  .card-video-small-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom:0;
+    z-index:0;
+    padding:2.5%;
+
+    video {
+      height: 100%;
+      // background-color: white;
+    }
+  } 
+}
+
+
+/* Video Player */
+.card-video-player {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: $black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom:0;
+  overflow: hidden;
+  @include border-radius(0.5rem);
+  @include transition(opacity 1s ease);
+  z-index: -1;
+
+    video {
+      position: absolute;
+      height: 100%;
+      max-height: 100%;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%,-50%);
+    }
+
+    &.hidden {
+      // z-index: -1;
+      opacity: 0;
+    }
+}
+
+/* Card Listing Content */
+
+.card-listing-content {
+  .card-listing-name {
+    font-weight: 600;
+    line-height: 2rem;
+    font-size: 1.75rem;
+
+    @media #{$breakpoint-sm-up} {
+      line-height: 3rem;
+      font-size: 2.5rem;
+    }
+  }
+
+  .card-listing-title {
+    margin-top: 0.5rem;
+    line-height: 1.5rem;
+    font-size: 1.0rem;
+    font-weight: 500;
+
+    @media #{$breakpoint-sm-up} {
+      line-height: 1.5rem;
+      font-size: 1.125rem;
+    }
+  }
+
+  .card-listing-description {
+    margin-top: 0.5rem;
+    line-height: 1.5rem;
+    font-size: 1.0rem;
+    @include opacity(0.75);
+  }
+
+  .card-listing-divider {
+    margin:1rem 0;
+    height: 0.125rem;
+    background-color: rgba($white,0.1);
+
+    @media #{$breakpoint-sm-up} {
+      margin:2rem 0;
+    }
+  }
+
+  .card-listing-collection {
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    
+    @media #{$breakpoint-sm-up} {
+      font-size: 1rem;
+    }
+  }
+
+  .card-listing-release {
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    
+    @media #{$breakpoint-sm-up} {
+      font-size: 1rem;
+    }
+  }
+
+  .card-listing-rarity {
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    
+    @media #{$breakpoint-sm-up} {
+      font-size: 1rem;
+    }
+
+    &.lvl5 {
+      color: $rarity-lvl5;
+    }
+
+    &.lvl4 {
+      color: $rarity-lvl4;
+    }
+
+    &.lvl3 {
+      color: $rarity-lvl3;
+    }
+
+    &.lvl2 {
+      color: $rarity-lvl2;
+    }
+
+    &.lvl1 {
+      color: $rarity-lvl1;
+    }
+  }
+
+  .card-listing-distribution {
+    margin-top: 1rem;
+
+    @media #{$breakpoint-sm-up} {
+      margin-top: 2rem;
+    }
+    .card-listing-distribution-value {
+      display: inline-block;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      font-weight: 600;
+      &:before {
+        content: '#';
+      }
+    }
+
+    .card-listing-distribution-total {
+      display: inline-block;
+
+      @include opacity(0.75);
+      &:before {
+        content: '/';
+      }
+    }
+  }
+
+  
+}
+
+
+.modal-content-container {
+  z-index: 1;
+  position:relative;
+}
+
+
+.modal-shading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom:0;
+  overflow: hidden;
+  z-index: 0;
+
+  .modal-shading-1  {
+    position: absolute;
+    left: 10%;
+    top: 0;
+    height: 20rem;
+    width: 20rem;
+    display: block;
+    transform: skewX(-22deg) translate(0,0);
+    background: rgb(0,0,0);
+    background: radial-gradient(at top left, rgba($theme-accent-shadow,1) 0%, rgba($theme-accent-shadow,0) 50%);
+    @include opacity(0.15);
+    z-index: 1;
+  }
+
+  .modal-shading-2  {
+    position: absolute;
+    left: 70%;
+    top: 0;
+    height: 20rem;
+    width: 20rem;
+    display: block;
+    transform: skewX(-22deg) translate(0,0);
+    background: rgb(0,0,0);
+    background: radial-gradient(at top left, rgba($theme-accent-shadow,1) 0%, rgba($theme-accent-shadow,0) 50%);
+    @include opacity(0.05);
+    z-index: 1;
+  }
+
+  .modal-shading-3 {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 20rem;
+    width: 20rem;
+    display: block;
+    transform: skewX(-22deg) translate(0,0);
+    background: rgb(0,0,0);
+    background: radial-gradient(at bottom right, rgba($theme-accent-shadow,60%) 0%, rgba($theme-accent-shadow,0) 60%);
+    @include opacity(0.15);
+    z-index: 1;
+  }
+
+  .modal-team-logo {
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    height: 60%;
+    @include translate(-50%,-50%);
+    @include opacity(0.125);
+
+
+    @media #{$breakpoint-xs-only} {
+      height: auto;
+      width: 80%;
+    }
+
+    img {
+      height: 100%;
+      filter: grayscale(100%);
+
+      @media #{$breakpoint-xs-only} {
+        height: inherit;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+.card-explosion {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom:0;
+  z-index: 1;
+
+  .card-explosion-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%,-50%);
+    height: 256px;
+    width: 256px;
+    overflow: hidden;
+    background:url('../cloud.png') left top;
+    animation: explosion 1s steps(16) infinite;
+
+  }
+}
+
+
+// explosion 
+@keyframes explosion {
+  100%  {
+    background-position:-4096px top;
+  }
+}
+
+
+
+
+
+
+.card-listing-explorer {
+  font-size:0.75rem;
+  line-height: 1.0rem;
+  color: lighten($mid-grey, 10%);
+
+    a.contract-address {
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: inherit;
+      margin-bottom: 1rem;
+
+      &:hover, &:focus {
+        text-decoration: underline;
+        color: $black;
+      }
+    }
+
+    .token-id {
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      word-break: break-all;
+    }
+  }

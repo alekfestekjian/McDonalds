@@ -1,0 +1,370 @@
+// This is th decorative background on content page
+#page-headline {
+	position: relative;
+	// min-height: 28.5rem;
+	overflow: visible;
+	left: 0;
+	top: 0;
+	padding-top: 5rem;
+	right: 0;
+	@media #{$breakpoint-xs-only} {
+		overflow: hidden;
+	}
+		
+	@media #{$breakpoint-lg-up} {
+		padding-top: 6rem;
+	}
+
+	&.use-theme-color {
+		color: $user-profile-color;
+
+		.bg-color {
+			background-color:$user-profile-bg;
+		}
+
+		.bg-shading {
+			display: none;
+		}
+
+		.bg-image {
+			filter: contrast(5);
+		}
+
+		.bg-accent-shadow-1 {
+			background: radial-gradient(at top left, rgba($theme-accent-shadow,1) 0%, rgba($theme-accent-shadow,0) 50%);
+		}
+
+		.bg-accent-shadow-2 {
+			background: radial-gradient(at top left, rgba($theme-accent-shadow,80%) 0%, rgba($theme-accent-shadow,0) 80%);
+		}
+
+		.bg-accent-shadow-3 {
+			background: radial-gradient(at bottom right, rgba($theme-accent-shadow,60%) 0%, rgba($theme-accent-shadow,0) 60%);
+		}
+
+		// & + #page-content {
+		// 	#page-content-header {
+		// 		color: $white;
+		// 	}
+		// }
+	}
+
+	& + #page-content {
+		margin-top: 1rem;
+		
+		@media #{$breakpoint-sm-up} {
+			margin-top: 2rem;
+		}
+
+		&.offset-heading {
+			margin-top: 1rem;
+			
+			@media #{$breakpoint-sm-up} {
+				margin-top: 4rem;
+			}
+		}
+
+	}
+
+	.bg-color {
+		position: absolute;
+		left: 0;
+		top:0;
+		right: 0;
+		bottom:0;
+		z-index: 0;
+		background-color: $base-background;
+	}
+
+	.bg-image {
+		background-image: url($theme-images-pathway + '/bg-shading.png');
+		background-position:center top;
+		background-repeat: repeat-x;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom:0;
+		z-index: 1;
+	}
+
+	.bg-shading {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom:0;
+		z-index: 1;
+		background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%);
+		// @include opacity(0.5);
+	}
+
+	.bg-accent-shadow-1 {
+		position: absolute;
+		left: 40%;
+		top: 0;
+		bottom:20%;
+		width: 12rem;
+		display: block;
+		transform: skewX(-22deg) translate(150%,0);
+		background: rgb(0,0,0);
+		background: radial-gradient(at top left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%);
+		@include opacity(0.15);
+
+		@media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+			left: 20%;
+		}
+	}
+
+	.bg-accent-shadow-2 {
+		position: absolute;
+		left: 40%;
+		top: 0;
+		bottom:0%;
+		width: 20rem;
+		display: block;
+		transform: skewX(-22deg) translate(40%,0);
+		background: rgb(0,0,0);
+		background: radial-gradient(at top left, rgba(0,0,0,80%) 0%, rgba(0,0,0,0) 80%);
+		@include opacity(0.15);
+		z-index: 1;
+
+		@media #{$breakpoint-xs-only, $breakpoint-sm-only} {
+			left: 20%;
+		}
+	}
+
+	.bg-accent-shadow-3 {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		bottom:0%;
+		width: 20rem;
+		display: block;
+		transform: skewX(-22deg) translate(-160%,0);
+		background: rgb(0,0,0);
+		background: radial-gradient(at bottom right, rgba(0,0,0,60%) 0%, rgba(0,0,0,0) 60%);
+		@include opacity(0.15);
+		z-index: 1;
+	}
+
+	.page-headline-inner {
+		position: relative;
+		z-index: 2;
+		padding:2rem 0;
+
+		&.no-bottom-padding {
+			padding-bottom:0;
+		}
+	}
+}
+
+
+
+
+.pack-item-container {
+	position: relative;
+
+
+	@media #{$breakpoint-xs-only} {
+		text-align: center;
+	}
+
+
+	.pack-item-image-container {
+		text-align: center;
+		position: relative;
+		padding:2rem 0;
+		margin-bottom: 0rem;
+
+		@media #{$breakpoint-sm-up} {
+			padding:2rem 0 0;
+			margin-bottom: -4rem;
+		}
+
+		.pack-item-image {
+			max-width: 10rem;
+			margin:0 auto;
+			z-index: 1;
+			position:relative;
+			transform: rotate(8deg);
+			@include transition(all .3s ease);
+			animation: fadeIn 0.5s 1 ease-in-out normal;
+			box-shadow: 0 0 2rem rgba($black,0.5),0 0 2rem rgba($black,0.5) inset;
+
+			@media #{$breakpoint-sm-up} {
+				max-width: 14rem;
+			}
+
+			img {
+				width: 100%;
+				vertical-align: top;
+				@include transition(all .3s ease);
+			}
+		}
+
+		.pack-item-shadow {
+			color: rgba($black,0.2);
+			position: absolute;
+			font-size: 4rem;
+			left: 50%;
+			bottom:-5%;
+			transform: translate(-50%,0) rotate(-15deg);
+			animation: fadeIn 0.5s 1 ease-in-out normal;
+		}
+
+		.pack-item-splatter-1 {
+			color: rgba($black,0.4);
+			position: absolute;
+			font-size: 8rem;
+			right: 15%;
+			bottom: 20%;
+			transform: translate(0,0) rotate(-85deg);
+			animation: fadeIn 0.5s 1 ease-in-out normal;
+			
+			@media #{$breakpoint-sm-up} {
+				right: 0;
+			}
+		}
+
+		.pack-item-splatter-2 {
+			color: rgba($black,0.4);
+			position: absolute;
+			font-size: 6rem;
+			left: 10%;
+			bottom: 0;
+			transform: translate(0,0) rotate(-15deg);
+			animation: fadeIn 0.5s 1 ease-in-out normal;
+			
+			@media #{$breakpoint-sm-up} {
+				left: 0;
+			}
+		}
+	}
+
+
+	.pack-item-content-container {
+		position: relative;
+		z-index: 1;
+
+
+		.pack-item-collection {
+			line-height: 1.25rem;
+			font-size: 1.0rem;
+			font-weight: 600;
+
+			@media #{$breakpoint-md-up} {
+				line-height: 1.5rem;
+				font-size: 1.25rem;
+			}
+		}
+
+		.pack-item-details {
+			line-height: 1.5rem;
+			margin:0.5rem 0;
+		}
+
+		.pack-item-price {
+			font-weight: 600;
+			font-size: 2rem;
+			margin-bottom: 1rem;
+			line-height: 2.0rem;
+			margin-top: 1rem;
+
+			.system-currency {
+				font-size: 0.875rem;
+			}
+		}
+
+		.pack-item-purchase {
+			
+			.grid-noGutter {
+
+				@media #{$breakpoint-xs-only} {
+					justify-content:center
+				}
+			}
+		}
+
+		.pack-count {
+			line-height: 1rem;
+			padding:1rem 0;
+			font-size: 0.875rem;
+		}
+
+	}
+
+	&:hover, &:focus {
+		.featured-item-image-container {
+			.featured-item-image {
+				transform: rotate(12deg);
+				img {
+					transform: scale(1.05);
+				}
+			}
+		}	
+	}
+}
+
+.pack-column-left {
+	margin-right: calc(100vw/12);
+	border-right:1px solid $light-grey;
+}
+
+.pack-column-right {
+}
+
+.pack-instructions {
+	padding:1.5rem;
+	background-color: $light-grey;
+
+	p {
+		font-size: 0.875rem;
+		line-height: 1.375rem;
+	}
+}
+
+
+.pack-fine-print {
+
+}
+
+
+.content-line-vertical {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	bottom:0;
+	width: 0.125rem;
+	background-color: rgba($black,0.1);
+	display: block;
+	@include translate(-50%,0);
+}
+
+
+
+// Additional info for Pack Details
+
+#pack-additional-info {
+	background-color: $light-grey;
+	padding:3rem 0;
+
+	.pack-additional-info-inner {
+
+	}
+}
+
+
+.collector-button {
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    text-align: center;
+
+	button {
+		font-size: 0.875rem;
+		padding-top:1.5rem;
+		padding-bottom:1.5rem;
+	}
+}

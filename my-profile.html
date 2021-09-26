@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-control" content="public">
+	<meta name="description" content="Myodis Portal" />
+	<title>Myodis Portal</title>
+
+	<!-- CSS -->
+	<link href="css/core.css" rel="stylesheet" defer />
+
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" defer>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" defer>
+	
+	<!-- Line Awesome -->
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" defer>
+
+
+
+</head>
+<body>
+
+	<header id="header">
+
+		<div id="header-bar" class="skin-inverted fixed">
+			<div class="page-width">
+				
+				<div id="header-bar-inner">
+
+					<!-- Header Logo -->
+					<div id="header-logo">
+						<a href="index.html" title="Click to Go Home">
+							<img src="images/theme/nwl/logo.png" alt="Logo" />
+							<!-- <span class="icon_logo_clipcards_knockout"></span> -->
+						</a>
+					</div>
+
+					<div id="header-menu-trigger">
+						<button type="button" class="btn-default" id="btn-toggle-nav" onclick="toggleNav();">
+							<span class="btn-icon"><i class="las la-bars"></i></span>
+							<span class="btn-text sr-only">Menu</span>
+						</button>
+					</div>
+					
+					<!-- Navigation  -->
+					<div id="header-navigation" class="clearfix">
+						<div id="header-main-nav">
+							<ul>
+								<li><a class="nav-link" href="index.html">Home</a></li>
+								<li><a class="nav-link" href="my-cards.html">My Cards</a></li>
+								<li><a class="nav-link" href="store.html">Store</a></li>
+								<li><a class="nav-link" href="marketplace.html">Marketplace</a></li>
+								<!-- <li><a class="nav-link" href="how-it-works.html">How it works</a></li> -->
+								<li><a class="nav-link" href="faqs.html">FAQs</a></li>
+							</ul>
+						</div>
+
+						<div id="header-member-nav" style="display: none;">
+							<ul>
+								<li>
+									<button type="button" class="btn-default btn-outline" id="btn-login">
+										<span class="btn-text">Login</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn-default btn-secondary" id="btn-register">
+										<span class="btn-text">Register</span>
+									</button>
+								</li>
+							</ul>
+						</div>
+
+
+
+						<!-- Members Area  -->
+						<div id="header-member" style="display: block;">
+							<div class="member-container">
+								<div class="member-link">
+									<a href="javascript:void(0);" class="member-link" onclick="toggleDropdown('member-options',this);">
+										<div class="member-avatar">
+											<img src="images/member/member-profile.jpg" alt="Profile Image" />
+										</div>
+										<div class="member-content">
+											<div class="member-name">McChickenFan83</div>
+											<!-- <div class="member-rank">Collector</div> -->
+										</div>
+									</a>
+								</div>
+								<div class="member-options" id="member-options" style="display: none;">
+									<ul>
+										<li><a href="my-cards.html">My Cards <span class="item-count">9</span></a></li>
+										<li><a href="my-packs.html">My Packs <span class="item-count">0</span></a></li>
+										<li><a href="my-challenges.html">Challenges <span class="item-count">3</span></a></li>
+										<li><a href="my-buy-sell.html">Buy &amp; Sell</a></li>
+										<li><a href="my-wallet.html">My Wallet</a></li>
+										<li><a href="my-profile.html">My Profile</a></li>
+										<li><a href="index.html">Logout</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div id="header-menu-close" class="hidden">
+							<button type="button" class="btn-default" id="btn-close-nav" onclick="toggleNav();">
+								<span class="btn-icon"><i class="las la-times"></i></span>
+								<span class="btn-text sr-only">Close</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+
+	<section id="page-background" class=""> <!-- add class "use-theme-color" -->
+		<div class="bg-color"></div>
+		<div class="bg-image"></div>
+		<div class="bg-accent-shadow-1"></div>
+		<div class="bg-accent-shadow-2"></div>
+		<div class="bg-accent-shadow-3"></div>
+		<div class="bg-shading"></div>
+	</section>
+
+	<!-- Page Content -->
+	<section id="page-content">
+
+		<div class="page-width">
+			<div id="page-content-inner">
+				
+				<div id="page-content-header">
+					<div class="grid-spaceBetween-middle">
+						<div class="col-auto">
+							<h1 class="page-title">My Profile</h1>
+						</div>
+					</div>
+				</div>
+
+				<div id="page-content-body">
+					<!-- Previous Packs -->
+					<section id="store-packs">
+						<div class="grid-spaceBetween">
+							<div class="col-6_xs-12">
+								<h2 class="body-text-title">Personal Details</h2>
+
+								<form action="#" id="form-filter-cards">
+									<div class="grid">
+										<div class="col-6_xs-12_sm-12">
+											<div class="form-row">
+												<div class="form-label">
+													<label for="field-username">Username <span class="mandatory">*</span></label>
+												</div>
+												<div class="form-input">
+													<input type="text" class="inputbox" id="field-username" value="McChickenFan83" placeholder="Enter Username" required="" />
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="grid">
+										<div class="col">
+											<div class="form-row">
+												<div class="form-label">
+													<label for="field-first-name">First Name <span class="mandatory">*</span></label>
+												</div>
+												<div class="form-input">
+													<input type="text" class="inputbox" id="field-first-name" placeholder="Enter First Name" value="Alex" required="" />
+												</div>
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-row">
+												<div class="form-label">
+													<label for="field-last-name">Last Name <span class="mandatory">*</span></label>
+												</div>
+												<div class="form-input">
+													<input type="text" class="inputbox" id="field-last-name" placeholder="Enter Last Name" value="Anderson" required="" />
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="form-row">
+										<div class="form-label">
+											<label for="field-email-address">Email Address <span class="mandatory">*</span>  <span class="form-helper float-right"><a href="javascript:void(0);" data-dialog="dialog-change-email">Change Email</a></span></label>
+										</div>
+										<div class="form-input">
+											<input type="text" class="inputbox" id="field-email-address" placeholder="Enter Email Address" value="alex.anderson@gmail.com" disabled="" required="" />
+										</div>
+									</div>
+									
+									<div class="form-row">
+										<div class="form-label">
+											<label for="field-password">Password <span class="mandatory">*</span> <span class="form-helper float-right"><a href="javascript:void(0);" data-dialog="dialog-change-password">Change Password</a></span></label>
+										</div>
+										<div class="form-input">
+											<input type="password" class="inputbox" id="field-password" placeholder="Enter Password" value="mypassword" disabled="" required="" />
+										</div>
+									</div>
+
+									<div class="form-row">
+										<div class="form-label">
+											<label for="upload-profile-pic" class="btn-profile-pic">Profile Photo</label>
+										</div>
+										<div class="form-input">
+											<input class="inputbox" type="file" id="upload-profile-pic" value="sl" />
+										</div>
+									</div>
+
+									<div class="form-row">
+										<div class="form-label">
+											<label for="field-fav-team">Favourite Team</label>
+										</div>
+										<div class="form-input">
+											<select type="text" class="inputbox" id="field-fav-team">
+												<option value="">Minnesota Mud Puppies</option>
+											</select>
+										</div>
+									</div>
+
+
+									<div class="form-action margin-top-xl">
+										<button type="button" class="btn-default btn-primary">
+											<span class="btn-text">Update Profile</span>
+										</button>
+									</div>
+								</form>
+								<div class="margin-bottom-xl"></div>
+							</div>
+							<div class="col-5_xs-12">
+								<div id="secton-social-media">
+									<h2 class="body-text-title">Social Media</h2>
+
+									<div class="grid">
+										<div class="col-left">
+											<button type="button" class="btn-default btn-twitter">
+												<span class="btn-icon"><i class="lab la-twitter"></i></span>
+												<span class="btn-text">Connect Twitter</span>
+											</button>
+										</div>
+										<div class="col-left">
+											<button type="button" class="btn-default btn-discord">
+												<span class="btn-icon"><i class="lab la-discord"></i></span>
+												<span class="btn-text">Connect Discord</span>
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="margin-bottom-xl"></div>
+
+								<div id="section-account-activity">
+									<h2 class="body-text-title">Account Activity</h2>
+									<p><strong>20 May 2021</strong><br/>You recently signed in on device MAC OS from IP 192.168.0.1</p>
+									<p><strong>18 May 2021</strong><br/>You recently signed in on device IPHONE 12 from IP 192.168.0.1</p>
+									<p><a href="#">See Full History</a></p>
+								</div>
+
+							</div>
+						</div>
+
+
+					</section>
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+
+	<footer id="footer">
+		<div class="page-width">
+			<div id="footer-inner">
+				<div class="footer-content">
+					<div class="grid-2_sm-1">
+						<div class="col-4_sm-12">
+							<div class="footer-logo">
+								<a href="index.html" title="Click to Go Home">
+									<span class="icon_logo_clipcards_knockout"></span>
+								</a>
+							</div>
+							<div class="footer-partner">
+								<a href="index.html" title="Click to visit NuarcaLabs">
+									<span class="icon_nuarca_labs"></span>
+								</a>
+							</div>
+							<div class="footer-copyright-text">
+								&copy; Copyright 2021 Clip Cards Ltd. <br/>All Rights Reserved
+							</div>
+						</div>
+						<div class="col-8_sm-12">
+							<div id="footer-links-container" class="grid-4_sm-2">
+								<div class="col-3_sm-6">
+									<div class="footer-title">Product</div>
+									<ul class="footer-links list-reset">
+										<li><a href="store.html">Store</a></li>
+										<li><a href="marketplace.html">Marketplace</a></li>
+										<li><a href="press.html">Press</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Company</div>
+									<ul class="footer-links list-reset">
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="terms_conditions.html">Terms &amp; Conditions</a></li>
+										<li><a href="privacy.html">Privacy Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Help</div>
+									<ul class="footer-links list-reset">
+										<li><a href="how_it_works.html">How it works</a></li>
+										<li><a href="faqs.html">FAQs</a></li>
+										<li><a href="feedback.html">Feedback Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Social</div>
+									<ul class="footer-links list-reset">
+										<li><a href="#" class="link-twitter" target="_blank"><span class="lab la-twitter"></span>Twitter</a></li>
+										<li><a href="#" class="link-facebook" target="_blank"><span class="lab la-facebook-f"></span>Facebook</a></li>
+										<li><a href="#" class="link-discord" target="_blank"><span class="lab la-discord"></span>Discord</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-legal">
+					<p>Officially licensed product. <a href="#">Do Not Sell My Personal Information</a>.</p>
+					<p>This site is protected by reCAPTCHA and the Google <a href="privacy.html">Privacy Policy</a> and <a href="terms_conditions.html">Terms of Service</a> apply.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Dialog -->
+	<div class="dialog" id="dialog-change-password">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Change Password</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-body">
+	  			
+									
+				<div class="form-row">
+					<div class="form-label">
+						<label for="field-current-password">Current Password</label>
+					</div>
+					<div class="form-input">
+						<input type="password" class="inputbox" id="field-current-password" placeholder="" required="" />
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-label">
+						<label for="field-new-password">New Password</label>
+					</div>
+					<div class="form-input">
+						<input type="password" class="inputbox" id="field-new-password" placeholder="" required="" />
+					</div>
+				</div>			
+				<div class="form-row">
+					<div class="form-label">
+						<label for="field-confirm-password">Confirm Password</label>
+					</div>
+					<div class="form-input">
+						<input type="password" class="inputbox" id="field-confirm-password" placeholder="" required="" />
+					</div>
+				</div>
+
+
+	  		</div>
+	  		<div class="dialog-footer">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-text">Cancel</span>
+	  					</button>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-primary">
+	  						<span class="btn-text">Change Password</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	</div>
+
+
+
+	<!-- Dialog -->
+	<div class="dialog" id="dialog-change-email">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Change Email Address</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-body">
+	  			
+				<p>To change your email address, please contact us at <a href="mailto:support@nuarca.com">support@nuarca.com</a></p>
+
+
+	  		</div>
+	  		<div class="dialog-footer">
+	  			<div class="grid-center">
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default dialog-exit">
+	  						<span class="btn-text">Close</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	</div>
+
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script type="text/javascript" src="js/dialogs.js" ></script>
+	
+</body>
+</html>

@@ -1,0 +1,110 @@
+.inline-msg {
+	background-color: $light-grey;
+	padding:1rem;
+	position: relative;
+	margin-bottom: 1rem;
+	@include border-radius(0.25rem);
+
+	.inline-msg-icon {
+		position:absolute;
+		left: 1rem;
+		top:1rem;
+		font-size: 2rem;
+
+		& + .inline-msg-text {
+			margin-left: 3rem;;
+		}
+	}
+
+	.inline-msg-text {
+		line-height: 1.5rem;
+		font-size: 0.875rem;
+		
+		.inline-msg-title {
+			display: block;
+			font-weight: 600;
+			padding:0.25rem 0;
+			font-size:1.25rem;
+			margin-bottom: 0.5rem;
+			margin-right: 2rem;
+
+
+			@media #{$breakpoint-xs-only} {
+				font-size:1.0rem;
+				margin-bottom: 0rem;
+			}
+
+
+		}
+
+		p {
+			line-height: 1.25rem;
+		}
+
+
+	}
+
+	.inline-msg-close {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+
+	}
+}
+
+
+.placeholder-msg {
+	// background-color: $light-grey;
+	padding:1rem;
+	position: relative;
+	margin-bottom: 1rem;
+	@include border-radius(0.25rem);
+	border:1px solid rgba($black,0.25);
+
+	.inline-msg-icon {
+		position:absolute;
+		left: 1rem;
+		top:1rem;
+		font-size: 2rem;
+
+		& + .inline-msg-text {
+			margin-left: 3rem;;
+		}
+	}
+
+	.inline-msg-text {
+		line-height: 1.5rem;
+		font-size: 0.875rem;
+		
+		.inline-msg-title {
+			display: block;
+			font-weight: 600;
+			padding:0.25rem 0;
+			font-size:1.25rem;
+			margin-bottom: 0.5rem;
+			margin-right: 2rem;
+
+
+			@media #{$breakpoint-xs-only} {
+				font-size:1.0rem;
+				margin-bottom: 0rem;
+			}
+		}
+
+
+
+		p {
+			line-height: 1.25rem;
+		}
+
+
+	}
+
+	.inline-msg-close {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+
+	}
+}
+

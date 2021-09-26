@@ -1,0 +1,885 @@
+#content-marketplace {
+	background-color: rgba($light-grey,0.5);
+
+	#content-marketplace-inner {
+		padding-top: 4rem;
+		position: relative;
+	}
+}
+
+
+// Marketplace Cards
+#content-marketplace-cards {
+	padding:3rem 0 2rem;
+
+	@media #{$breakpoint-md-up} {
+		float:left;
+		width: 50%;
+	}
+
+	ul {
+		font-size: 0;
+		white-space: nowrap;
+		margin:0;
+		padding:0;
+		list-style: none;
+
+		li {
+			font-size: $base-font-size;
+			text-align: center;
+			display: inline-block;
+			width: 50%;
+			vertical-align: top;
+
+
+			@media #{$breakpoint-xs-only} {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.card-listing-container {
+	text-align: left;
+	display: block;
+	overflow: hidden;
+
+	&.pack-opening {
+		padding:1rem 0 0;
+
+		a.card-listing-item,
+		.card-listing-item {
+			.card-listing-image-container { 
+				.card-listing-image {
+					.card-listing-shadow {
+						.card-shadow-1 {
+							span {
+								background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 30%);
+								@include opacity(0.1);
+							}
+						}
+					}
+
+					.card-listing-shadow {
+						.card-shadow-2 {
+							span {
+								background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 30%);
+								@include opacity(0.1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	a.card-listing-item,
+	.card-listing-item {
+		display: block;
+		color: inherit;
+		text-decoration: none;
+		padding:2rem 0;
+		position:relative;
+
+
+		&.alt-layout {
+
+			@media #{$breakpoint-xs-only} {
+				font-size: 0;
+				vertical-align: top;
+				padding:1.5rem 0;
+				border-top:1px solid rgba($black,0.1);
+			}
+
+			.card-listing-image-container {
+				
+				@media #{$breakpoint-xs-only} {
+					display: inline-block;
+					font-size: $base-font-size;
+					vertical-align: top;
+					margin-left: 0rem;
+					max-width: 5rem;
+
+					.card-listing-image {
+						.card-list-overlay {
+							.card-list-details-shading {
+							}
+							.card-list-details-position {
+								display: none;
+							}
+							.card-list-details-number {
+								display: none;
+							}
+							.card-list-details-rarity {
+								display: none;
+							}
+							.card-list-details-name {
+								display: none;
+							}
+							.card-list-details-team-logo {}
+
+							.card-list-details-distribution {
+								display: none;
+							}
+						}
+
+						.card-listing-shadow {
+							display: none;
+						}
+					}
+				}
+			}
+
+			.card-listing-text {
+				@media #{$breakpoint-xs-only} {
+					display: inline-block;
+					width: calc(100% - 6rem);
+					font-size: 0;
+					margin:-0.5rem 0 0 1rem;
+					vertical-align: top;
+				}
+			}
+
+		}
+
+		.card-listing-image-container {
+			display: block;
+			position: relative;
+			margin: 0 auto;
+			max-width: 7.0rem;
+
+			@media #{$breakpoint-sm-only} {
+				max-width: 10rem; // This could be up to 14rem;
+			}
+
+			@media #{$breakpoint-md-only} {
+				max-width: 10rem; // This could be up to 14rem;
+			}
+
+			@media #{$breakpoint-lg-up} {
+				max-width: 12rem; // This could be up to 14rem;
+			}
+
+			.card-listing-image {
+				display: block;
+				perspective: 10rem;
+				position:relative;
+				left: 50%;
+				top: 0;
+				@include translate(-50%,0);
+				transform-origin: center center;
+				@include transition(all .3s ease);
+
+				.card-list-overlay {
+					position: absolute;
+					line-height: 0;
+					top: 0;
+					right: 0;
+					bottom:0;
+					left: 0;
+					// background-color:black;
+					z-index: 5;
+					transform: rotateX(0deg) rotateY(-4deg) translateZ(0.5rem);
+					@include border-radius(0.5rem);
+					@include transition(all .3s ease);
+					color: $white;
+					
+					@media #{$breakpoint-xs-only} {
+						font-size: 75%;
+					}
+					
+					@media #{$breakpoint-sm-only} {
+						font-size: 75%;
+					}
+
+					.card-list-details-position {
+						display: block;
+						position: absolute;
+						left: 7%;
+						top: 5%;
+						font-size: 200%;
+						font-weight:600;
+    					line-height:100%;
+					}
+
+					.card-list-details-number {
+						display: block;
+						position: absolute;
+						left: 7%;
+						top: 5%;
+    					-webkit-font-smoothing: antialiased;
+    					font-size: 400%;
+    					line-height:100%;
+						font-weight:600;
+    					color:transparent;
+					 	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+					 	-webkit-text-stroke-width: 1px;
+					  	-webkit-text-stroke-color: white;
+					  	@include opacity(0.75);
+					}
+
+					.card-list-details-rarity {
+						display: inline-block;
+						position: absolute;
+						left:0;
+						right:0;
+						bottom:0;
+						vertical-align: bottom;
+						padding:32% 7% 7%;
+						// top: 68%;
+						text-align: left; // text-align:center;
+						font-size: 67.5%;
+						line-height:125%;
+						font-weight: 600;
+						text-transform: uppercase;
+						z-index: 2;
+						// color: $white !important;
+						text-shadow: 0 0.25rem 1rem rgba($black,0.5);
+						// background-color: rgba($black,0.1);
+
+						@media #{$breakpoint-sm-up} {
+							font-size: 80%;
+						}
+
+						&.type-lvl5 {
+							color:$rarity-lvl5;
+
+							&:after {
+								content: '';
+								position: absolute;
+								left: 0;
+								bottom:0;
+								top: 0;
+								right: 0;
+								background: url($theme-images-pathway + '/card-footer-lvl5.png') no-repeat;
+								background-size:contain;
+								@include image-2x($theme-images-pathway + '/card-footer-lvl5@2x.png', contain, auto);
+								background-position:center bottom;
+								@include border-radii(0,0,0.5rem,0.5rem);
+								overflow: hidden;
+								z-index: -1;
+								// @include opacity(0.5);
+							}
+						}
+
+						&.type-lvl4 {
+							color:$rarity-lvl4;
+
+							&:after {
+								content: '';
+								position: absolute;
+								left: 0;
+								bottom:0;
+								top: 0;
+								right: 0;
+								background: url($theme-images-pathway + '/card-footer-lvl4.png') no-repeat;
+								background-size:contain;
+								@include image-2x($theme-images-pathway + '/card-footer-lvl4@2x.png', contain, auto);
+								background-position:center bottom;
+								@include border-radii(0,0,0.5rem,0.5rem);
+								overflow: hidden;
+								z-index: -1;
+								// @include opacity(0.5);
+							}
+						}
+
+						&.type-lvl3 {
+							color:$rarity-lvl3;
+
+							&:after {
+								content: '';
+								position: absolute;
+								left: 0;
+								bottom:0;
+								top: 0;
+								right: 0;
+								background: url($theme-images-pathway + '/card-footer-lvl3.png') no-repeat;
+								background-size:contain;
+								@include image-2x($theme-images-pathway + '/card-footer-lvl3@2x.png', contain, auto);
+								background-position:center bottom;
+								@include border-radii(0,0,0.5rem,0.5rem);
+								overflow: hidden;
+								z-index: -1;
+								// @include opacity(0.5);
+							}
+						}
+
+						&.type-lvl2 {
+							color:$rarity-lvl2;
+
+							&:after {
+								content: '';
+								position: absolute;
+								left: 0;
+								bottom:0;
+								top: 0;
+								right: 0;
+								background: url($theme-images-pathway + '/card-footer-lvl2.png') no-repeat;
+								background-size:contain;
+								@include image-2x($theme-images-pathway + '/card-footer-lvl2@2x.png', contain, auto);
+								background-position:center bottom;
+								@include border-radii(0,0,0.5rem,0.5rem);
+								overflow: hidden;
+								z-index: -1;
+								// @include opacity(0.5);
+							}
+						}
+
+						&.type-lvl1 {
+							color:$white;
+
+							&:after {
+								content: '';
+								position: absolute;
+								left: 0;
+								bottom:0;
+								top: 0;
+								right: 0;
+								background: url($theme-images-pathway + '/card-footer-lvl1.png') no-repeat;
+								background-size:contain;
+								@include image-2x($theme-images-pathway + '/card-footer-lvl1@2x.png', contain, auto);
+								background-position:center bottom;
+								@include border-radii(0,0,0.5rem,0.5rem);
+								overflow: hidden;
+								z-index: -1;
+								// @include opacity(0.5);
+							}
+
+						}
+					}
+
+					.card-list-details-name {
+						display: block;
+						position: absolute;
+						left:7%; //left:10%;
+						right: 7%; //right:10%;
+						bottom: 12%; //top: 74%;
+						text-align: left; //text-align: center;
+						font-size: 80%;
+						line-height:120%;
+						font-weight: 600;
+						white-space:break-spaces;
+						z-index: 2;
+
+						@media #{$breakpoint-xs-only} {
+							bottom:15%;
+						}
+
+						@media #{$breakpoint-sm-up} {
+							font-size: 100%;
+						}
+					}
+
+					.card-list-details-team-logo {
+						display: block;
+						position: absolute;
+						right: 5%; // left: 7%;
+						bottom: 5%; // bottom:5%;
+						width: 17%;
+						z-index: 2;
+						transform-style: preserve-3d;
+
+						img {
+							width: 100%;
+							vertical-align: top;
+						}
+					}
+					.card-list-details-distribution {
+						right: 7%;
+						top:7%;
+						position: absolute;
+						text-align: right;
+						z-index: 2;
+
+						.card-list-details-distribution-value {
+							display: block;
+							line-height: 100%;
+							font-size: 100%;
+							font-weight: 500;
+							z-index: 2;
+
+							&:before {
+								content: '#';
+							}
+						}
+
+						.card-list-details-distribution-total {
+							display: block;
+							line-height: 100%;
+							font-weight: 500;
+							font-size: 80%;
+							@include opacity(0.75);
+							z-index: 2;
+							display: none;
+
+							&:before {
+								content: '/';
+							}
+						}
+					}
+
+					.card-list-details-shading {
+						position: absolute;
+						left: 0;
+						bottom:0px;
+						right: 0;
+						top: 40%;
+						background: rgb(46,44,55);
+						background: linear-gradient(0deg, rgba(46,44,55,0.95) 0%, rgba(46,44,55,0.95) 20%, rgba(46,44,55,0) 100%);
+						@include border-radii(0,0,0.5rem,0.5rem);
+						vertical-align: bottom;
+						display: block;
+					}
+				}
+
+				> img {
+					display: block;
+					vertical-align: top;
+					transform: rotateX(0deg) rotateY(-4deg) translateZ(0.5rem);
+					transform-style: preserve-3d;
+					@include border-radius(0.5rem);
+					z-index: 4;
+					position:relative;
+					@include box-shadow(0,0,1rem,rgba($black,0.2));
+					transform-origin: center center;
+					@include transition(all .3s ease);
+					width: 100%;
+					padding-bottom:1px;
+				}
+
+				.card-listing-shadow {
+					display: block;
+					position: absolute;
+					left: 0.35rem;
+					right: 0.35rem;
+					top: 0;
+					bottom: 0;
+					z-index: 1;
+					// overflow: hidden;
+
+
+					.card-shadow-1 {
+						display: block;
+						position:absolute;
+						perspective: 8rem;
+						z-index: 3;
+						left: 50%;
+						top: 0;
+						bottom:0;
+						width: 100%;
+						@include translate(-50%,0);
+						@include transition(all .3s ease);
+
+						span {
+							display: block;
+							height: 100%;
+							width: 100%;
+							vertical-align: top;
+							transform: rotateX(0deg) rotateY(40deg) translateZ(-4rem);
+							transform-style: preserve-3d;
+							@include border-radius(0.5rem);
+							// background-color: darken($light-grey,20%);
+							background: rgb(0,0,0);
+							background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 30%);
+							transform-origin: center center;
+							@include transition(all .3s ease);
+							@include opacity(0.1);
+
+
+							@media #{$breakpoint-sm-up} {
+								transform: rotateX(0deg) rotateY(40deg)  translateZ(-8rem);
+							}
+						}
+					}
+
+					.card-shadow-2 {
+						display: block;
+						position:absolute;
+						perspective: 8rem;
+						z-index: 2;
+						left: 47%;
+						top: 0;
+						bottom:0;
+						width: 100%;
+						@include translate(-50%,0);
+						@include transition(all .3s ease);
+
+						span {
+							display: block;
+							height: 100%;
+							width: 100%;
+							vertical-align: top;
+							transform: rotateX(0deg) rotateY(-45deg)  translateZ(-4rem);
+							transform-style: preserve-3d;
+							@include border-radius(0.5rem);
+							// background-color: darken($light-grey,20%);
+							background: rgb(0,0,0);
+							background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 30%);
+							transform-origin: center center;
+							@include transition(all .3s ease);
+							@include opacity(0.1);
+
+
+							@media #{$breakpoint-sm-up} {
+								transform: rotateX(0deg) rotateY(-45deg)  translateZ(-8rem);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.card-listing-text {
+			display: block;
+			margin: 2rem auto;
+			max-width: 16rem;
+
+			.card-listing-circulation {
+				display: none;
+				margin-bottom:0.5rem;
+
+				span {
+					display: inline-block;
+					line-height: 1.0rem;
+					border:1px solid currentColor;
+					font-size: 0.75rem;
+					@include border-radius(4rem);
+					padding:0 0.5rem;
+
+					&.type-le {
+						color: $card-type-le;
+					} // Limited Edition
+					&.type-cc {
+						color: $card-type-cc;
+					} // Circulating Count
+				}
+			}
+
+			.card-listing-name {
+				display: block;
+				line-height: 1.5rem;
+				font-size: 1.0rem;
+				font-weight: 600;
+			}
+
+			.card-listing-title {
+				display: block;
+				font-size: 0.875rem;
+				line-height: 1.25rem;
+				white-space: break-spaces;
+				@include opacity(0.75);
+				font-weight: 400;
+			}
+
+			.card-listing-rarity {
+				font-size: 0.75rem;
+				line-height: 1.0rem;
+				display: block;
+				font-weight: 500;
+				text-transform: uppercase;
+
+				&.lvl5 {
+					color:$rarity-lvl5;
+				}
+
+				&.lvl4 {
+					color:$rarity-lvl4;
+				}
+
+				&.lvl3 {
+					color:$rarity-lvl3;
+				}
+
+				&.lvl2 {
+					color:$rarity-lvl2;
+				}
+
+				&.lvl1 {
+					color:currentColor; //;$rarity-lvl1;
+				}
+			}
+
+			.card-listing-distribution {
+				font-size: 0.75rem;
+				line-height: 1.0rem;
+				display: block;
+				font-weight: 600;
+				.card-listing-distribution-value {
+					&:before {
+						content: '#';
+					}
+				}
+
+				.card-listing-distribution-total {
+					&:before {
+						content: ' / ';
+					}
+				}
+			}
+
+			.card-listing-price {
+				display: block;
+				margin-top: 1rem;
+				// padding-top: 1rem;
+				// border-top:1px solid rgba($black,0.1);
+
+				.card-listing-price-label {
+					display: block;
+					@include opacity(0.75);
+					font-size: 0.75rem;
+					line-height: 1.0rem;
+				}
+
+				.card-listing-price-value {
+					display: block;
+					font-size: 1.25rem;
+					line-height:2rem;
+					font-weight: 600;
+					color: $black;
+				}
+			}
+
+			.card-listing-count {
+				display: block;
+				font-size: 0.75rem;
+				line-height: 1.0rem;
+				color: $black;
+			}
+		}
+
+
+
+		&:hover,
+		&:focus {
+			@media #{$breakpoint-md-up} {
+				.card-listing-image-container {
+
+					.card-listing-image {
+						@include translate(-50%,0);
+
+
+						.card-list-overlay {
+							// transform: rotateX(0deg) rotateY(0deg);
+							transform: rotateX(0deg) rotateY(0deg) translateZ(0.5rem) scale(1.1);
+						}
+
+						img {
+							// transform: rotateX(0deg) rotateY(0deg);
+							transform: rotateX(0deg) rotateY(0deg) translateZ(0.5rem) scale(1.1);
+							@include box-shadow(0,0,0rem,rgba($black,0.1));
+
+						}
+					}
+
+					.card-listing-shadow {
+						.card-shadow-1 {
+							@include translate(-50%,0);
+							span {
+								transform: rotateX(0deg) rotateY(0deg) scale(1);
+							}
+						}
+						.card-shadow-2 {
+							@include translate(-50%,0);
+							span {
+								transform: rotateX(0deg) rotateY(0deg) scale(1);
+							}
+						}
+						.card-shadow-3 {
+							@include translate(-50%,0);
+							span {
+								transform: rotateX(0deg) rotateY(0deg) scale(1);
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+
+
+// Marketplace Text
+#content-marketplace-text {
+	text-align: center;
+	position: relative;
+
+	@media #{$breakpoint-sm-up} {
+	}
+
+	@media #{$breakpoint-md-up} {
+	float:right;
+	width: 50%;
+	padding-left: calc(100% / 12);
+	padding-right: calc(100% / 12);
+
+	}
+
+	.content-marketplace-bg {
+		position: absolute;
+		left: 50%;
+		top: 5rem;
+		color: darken($light-grey,10%);
+		font-size: 4rem;
+		transform: translate(-50%, 0) rotate(-15deg);
+		z-index: -1;
+		transform-origin: center center;
+
+
+
+		@media #{$breakpoint-sm-up} {
+		font-size: 6rem;
+		}
+
+	}
+
+	.content-icon {
+		font-size: 3rem;
+		color: $theme-color-1;
+	}
+
+	.content-title {
+	}
+
+	p {
+		line-height: 1.5;
+		margin-bottom: 1rem;
+	}
+
+	.content-marketplace-btn {
+		margin:1rem 0;
+	}
+}
+
+
+// Latest Sales
+#marketplace-latest-sales {
+	text-align: left;
+	margin-top: 2rem;
+}
+
+#sale-item-feed {
+	ul {
+		margin-bottom: 0rem;
+		padding-bottom:2rem;
+		
+		@media #{$breakpoint-md-up} {
+			margin-bottom: -1rem;
+			padding-bottom:0rem;
+		}
+
+		li {
+			margin-bottom: 1rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.sale-item-container {
+	display: block;
+
+	a {
+		display: block;
+		padding:0.75rem;
+		background-color: $white;
+		@include box-shadow(0.25rem, 0.25rem, 1rem, rgba($black,0.1));
+		color: inherit;
+		text-decoration: none;
+		font-size: 0;
+		position: relative;
+		@include transition(all .2s ease);
+
+		&:hover, &:focus  {
+			@include box-shadow(0.5rem, 0.5rem, 1.5rem, rgba($black,0.2));
+			z-index: 1;
+		}
+
+		.sale-item-image {
+			display: inline-block;
+			font-size: $base-font-size;
+			width: 4rem;
+			vertical-align: top;
+			@include border-radius(0.25rem);
+			overflow: hidden;
+			@include box-shadow(0.5rem, 0.5rem, 1.5rem, rgba($black,0.2));
+
+			img {
+				vertical-align: top;
+				width: 100%;
+			}
+		}
+
+		.sale-item-text {
+			display: inline-block;
+			font-size: $base-font-size;
+			width: calc(100% - 4.75rem);
+			margin-left: 0.75rem;
+			
+			.sale-item-name {
+				display: block;
+				line-height:1.25rem;
+				font-weight:600;
+				font-size: 1.0rem;
+				margin-right: 6rem;
+			}
+			
+			.sale-item-details {
+				display: block;
+				line-height: 1.25rem;
+				font-size: 0.875rem;
+			}
+			
+			.sale-item-title {
+				display: block;
+				line-height: 1.25rem;
+				font-size: 0.875rem;
+			}
+			
+			.sale-item-sale-details {
+				display: block;
+				font-size: 0.75rem;
+				color: rgba($black,0.5);
+				line-height: 1.0rem;
+			}
+			.sale-item-price {
+				display: block;
+				position: absolute;
+				right: 0.75rem;
+				top: 0.75rem;
+				line-height:1.25rem;
+				font-weight:600;
+				font-size: 1.0rem;
+
+			}
+		}
+	}
+}
+
+
+
+// Design Accents for the section
+.content-marketplace-accents-top {
+	position: absolute;
+	top: 0;
+	right:0;
+
+	.content-marketplace-accents-top-1 {
+		font-size: 5.0rem;
+		position: absolute;
+		right: 0;
+		top: -2.5rem;
+		@include opacity (0.10);
+	}
+	.content-marketplace-accents-top-2 {
+		font-size: 2.0rem;
+		position: absolute;
+		right: 2rem;
+		top: -1rem;
+	}
+}

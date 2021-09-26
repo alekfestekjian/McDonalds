@@ -1,0 +1,203 @@
+body {
+	color: $base-font-color;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	background-color: $base-background;
+	font-family: $base-font-family;
+	padding: 0;
+	z-index: 1;
+
+
+	@media #{$breakpoint-xs-only} {
+		font-size:0.875rem;
+	}
+
+
+	&.fontLoaded {
+	}
+
+	&.noScroll {
+		overflow: hidden;
+	}
+}
+
+
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+p {
+	line-height: 1.5rem;
+	margin-bottom: 1.5rem;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+
+strong {
+	font-weight: 600;
+}
+
+small {
+	font-size: 0.75rem;
+}
+
+main { 
+	display: block;
+}
+
+
+input, button, textarea, select {
+	color: $base-font-color;
+	font-size: $base-font-size;
+	font-family: $base-font-family;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	@media #{$breakpoint-xs-only} {
+		font-size: $base-font-size-mobile;
+	}
+}
+
+.clearfix::after {
+	clear: both;
+	content: '';
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+ol {
+	li {
+
+	}
+}
+
+ul.list-default {
+	margin:0 0 1.5rem 1.5rem;
+	padding:0;
+	list-style: disc;
+
+	li {
+		line-height: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+}
+
+ol.list-default {
+	margin:0 0 1.5rem 1.5rem;
+	padding:0;
+	list-style: decimal;
+
+	li {
+		line-height: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+}
+
+ul.list-reset {
+	margin:0;
+	padding:0;
+	list-style: none;
+
+	>li {
+		display: block;
+		line-height: 1.5rem;
+	}
+}
+
+ul.list-inline {
+	font-size: 0;
+	>li {
+		display: inline-block;
+		font-size: $base-font-size;
+		vertical-align: top;
+	}
+}
+
+ul.list-inline-middle {
+	font-size: 0;
+	>li {
+		display: inline-block;
+		font-size: $base-font-size;
+		vertical-align: middle;
+	}
+}
+
+
+ul.list-condensed,
+ol.list-condensed {
+	> li {
+		line-height: 1.25rem;
+		margin-bottom: 0.25rem;
+	}
+}
+
+abbr {
+	text-decoration: none;
+}
+
+
+a:link,a:visited {
+	color: inherit;
+}
+
+a:hover,a:focus {
+	color: $theme-color-1;
+}
+
+.hide-mobile  {
+	@media #{$breakpoint-xs-only} {
+		display: none !important;
+	}
+}
+
+.show-mobile-only {
+	@media #{$breakpoint-xs-only} {
+		display: inline-block;
+	}
+	display: none;
+}
+
+.show-responsive-only {
+	@media #{$breakpoint-xs-only} {
+		display: inline-block !important;
+	}
+
+	@media #{$breakpoint-sm-only} {
+		display: inline-block !important;
+	}
+	
+	display: none !important;
+}
+
+
+.line-divider {
+	height: 1px;
+	background-color: rgba($black,0.1);
+	display: block;
+}
+
+
+
+.wysiwig-content {
+	ul {
+		margin:0 0 1.5rem 1.5rem;
+		padding:0;
+		list-style: disc;
+
+		li {
+			line-height: 1.5rem;
+			margin-bottom: 0.5rem;
+		}
+	}
+}

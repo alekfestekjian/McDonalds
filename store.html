@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-control" content="public">
+	<meta name="description" content="Myodis Portal" />
+	<title>Myodis Portal</title>
+
+	<!-- CSS -->
+	<link href="css/core.css" rel="stylesheet" defer />
+
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" defer>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" defer>
+	
+	<!-- Line Awesome -->
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" defer>
+
+
+
+</head>
+<body>
+
+	<header id="header">
+
+		<div id="header-bar" class="skin-inverted fixed">
+			<div class="page-width">
+				
+				<div id="header-bar-inner">
+
+					<!-- Header Logo -->
+					<div id="header-logo">
+						<a href="index.html" title="Click to Go Home">
+							<img src="images/theme/nwl/logo.png" alt="Logo" />
+							<!-- <span class="icon_logo_clipcards_knockout"></span> -->
+						</a>
+					</div>
+
+					<div id="header-menu-trigger">
+						<button type="button" class="btn-default" id="btn-toggle-nav" onclick="toggleNav();">
+							<span class="btn-icon"><i class="las la-bars"></i></span>
+							<span class="btn-text sr-only">Menu</span>
+						</button>
+					</div>
+					
+					<!-- Navigation  -->
+					<div id="header-navigation" class="clearfix">
+						<div id="header-main-nav">
+							<ul>
+								<li><a class="nav-link" href="index.html">Home</a></li>
+								<li><a class="nav-link" href="my-cards.html">My Cards</a></li>
+								<li><a class="nav-link selected" href="store.html">Store</a></li>
+								<li><a class="nav-link" href="marketplace.html">Marketplace</a></li>
+								<!-- <li><a class="nav-link" href="how-it-works.html">How it works</a></li> -->
+								<li><a class="nav-link" href="faqs.html">FAQs</a></li>
+							</ul>
+						</div>
+
+						<div id="header-member-nav" style="display: none;">
+							<ul>
+								<li>
+									<button type="button" class="btn-default btn-outline" id="btn-login">
+										<span class="btn-text">Login</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn-default btn-secondary" id="btn-register">
+										<span class="btn-text">Register</span>
+									</button>
+								</li>
+							</ul>
+						</div>
+
+
+
+						<!-- Members Area  -->
+						<div id="header-member" style="display: block;">
+							<div class="member-container">
+								<div class="member-link">
+									<a href="javascript:void(0);" class="member-link" onclick="toggleDropdown('member-options',this);">
+										<div class="member-avatar">
+											<img src="images/member/member-profile.jpg" alt="Profile Image" />
+										</div>
+										<div class="member-content">
+											<div class="member-name">McChickenFan83</div>
+											<!-- <div class="member-rank">Collector</div> -->
+										</div>
+									</a>
+								</div>
+								<div class="member-options" id="member-options" style="display: none;">
+									<ul>
+										<li><a href="my-cards.html">My Cards <span class="item-count">9</span></a></li>
+										<li><a href="my-packs.html">My Packs <span class="item-count">0</span></a></li>
+										<li><a href="my-challenges.html">Challenges <span class="item-count">3</span></a></li>
+										<li><a href="my-buy-sell.html">Buy &amp; Sell</a></li>
+										<li><a href="my-wallet.html">My Wallet</a></li>
+										<li><a href="my-profile.html">My Profile</a></li>
+										<li><a href="index.html">Logout</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div id="header-menu-close" class="hidden">
+							<button type="button" class="btn-default" id="btn-close-nav" onclick="toggleNav();">
+								<span class="btn-icon"><i class="las la-times"></i></span>
+								<span class="btn-text sr-only">Close</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+
+	<section id="page-background" class=""> <!-- add class "use-theme-color" -->
+		<div class="bg-color"></div>
+		<div class="bg-image"></div>
+		<div class="bg-accent-shadow-1"></div>
+		<div class="bg-accent-shadow-2"></div>
+		<div class="bg-accent-shadow-3"></div>
+		<div class="bg-shading"></div>
+	</section>
+
+	<!-- Page Content -->
+	<section id="page-content">
+
+		<div class="page-width">
+			<div id="page-content-inner">
+				
+				<div id="page-content-header">
+					<div class="grid-spaceBetween-middle">
+						<div class="col-auto">
+							<h1 class="page-title">Store</h1>
+						</div>
+						<div class="col-auto">
+							<div class="page-actions">
+								<ul class="list-reset list-inline">
+									<li>
+										<button type="button" class="btn-default btn-no-horizontal-padding" data-dialog="dialog-share">
+											<span class="btn-text">Share</span>
+											<span class="btn-icon"><em class="las la-share-square"></em></span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="page-content-body">
+
+					<!-- Feature items -->
+					<div class="grid">
+						<div class="col-8_sm-12">
+							<div class="featured-item">
+								<div class="featured-item-bg-container">
+									<div class="featured-item-bg-color"></div>
+									<div class="featured-item-bg-image"></div>
+									<div class="featured-item-bg-accent-1"></div>
+									<div class="featured-item-bg-accent-2"></div>
+								</div>
+								<div class="featured-item-image-container">
+									<div class="featured-item-image"><a href="pack-details.html"><img src="images/theme/nwl/pack1-mcd.png" alt="" /></a></div>
+									<div class="featured-item-shadow"><span class="icon_brush_stroke"></span></div>
+									<div class="featured-item-splatter-1"><span class="icon_splatter_1"></span></div>
+									<div class="featured-item-splatter-2"><span class="icon_splatter_2"></span></div>
+								</div>
+								<div class="featured-item-text-container">
+									<div class="featured-item-type">Featured Pack</div>
+									<div class="featured-item-title"><h2>Happy Meal Pack 1</h2></div>
+									<div class="featured-item-collection">Release 1</div>
+									<div class="featured-item-details">This pack contains 8 cards</div>
+									<div class="featured-item-price">$49.00 <span class="system-currency">USD</span></div>
+									<div class="featured-item-button">
+										<button type="button" class="btn-default btn-primary" onclick="window.location='pack-details.html'"> 
+											<span class="btn-text">Purchase Pack</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-4_sm-12">
+
+							<div class="secondary-item">
+								<a href="https://goldenarchesunlimited.com/"><img src="images/theme/nwl/merch.jpg" alt=""></a>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Store Questions -->
+					<section id="store-faq">
+						<div class="grid-center">
+							<div class="col-4_sm-12">
+								
+								<div class="store-faq-container">
+									<div class="store-faq-icon"><em class="las la-cube"></em></div>
+									<div class="store-faq-title"><h3>When do new drops happen?</h3></div>
+									<div class="store-faq-answer">Drop times will vary, so make sure you watch for announcements</div>
+								</div>
+
+							</div>
+							<div class="col-4_sm-12 show-divider">
+								
+								<div class="store-faq-container">
+									<div class="store-faq-icon"><em class="las la-bullhorn"></em></div>
+									<div class="store-faq-title"><h3>Where are drop announcements?</h3></div>
+									<div class="store-faq-answer">Sign up via email or follow Clip Cards on social to never miss a drop</div>
+								</div>
+
+							</div>
+							<div class="col-4_sm-12 show-divider">
+								
+								<div class="store-faq-container">
+									<div class="store-faq-icon"><em class="las la-question-circle"></em></div>
+									<div class="store-faq-title"><h3>What about sold out packs?</h3></div>
+									<div class="store-faq-answer">You can still snag Moments from the packs in the Marketplace from other collectors</div>
+								</div>
+
+							</div>
+						</div>
+					</section>
+
+					<!-- Previous Packs -->
+					<section id="store-packs">
+						<div class="grid-spaceBetween-middle">
+							<div class="col_xs-12">
+								<div class="section-title-container">
+									<h2 class="section-title">Happy Meal Packs</h2>
+
+									<div class="section-title-button">
+										<button type="button" class="btn-default" id="store-filters-button" onclick="toggleDiv('store-filters-container', this)">
+											<span class="btn-icon"><em class="las la-filter"></em></span>
+											<span class="btn-text sr-only">View Filters</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-auto_xs-12" id="store-filters-container">
+								<ul id="store-filters" class="list-inline list-reset">
+									
+									<li>
+										<div class="form-row">
+											<div class="form-label sr-only">
+												<label for="inline-filter-collection">Collection</label>
+											</div>
+											<div class="form-input">
+												<select class="inputbox inputbox-alt" id="inline-filter-collection">
+													<option value="all">All Collections</option>
+												</select>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="form-row">
+											<div class="form-label sr-only">
+												<label for="inline-filter-sortby">Sort by</label>
+											</div>
+											<div class="form-input">
+												<select class="inputbox inputbox-alt" id="inline-filter-sortby">
+													<option value="all">Newest First</option>
+												</select>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="grid-4_md-4_sm-3_xs-2">
+							<div class="col">
+								<div class="pack-item-container">
+									<a href="pack-details.html" title="View Off-Season Training">
+										<span class="pack-item-image"><img src="images/theme/nwl/pack1-mcd.png" alt="" /></span>
+										<span class="pack-item-accent"><span class="icon_brush_stroke"></span></span>
+										<span class="pack-item-text">
+											<span class="pack-item-name">Happy Meal Pack 1</span>
+											<span class="pack-item-collection">Release 1</span>
+											<span class="pack-item-price">$49.00 <span class="system-currency">USD</span></span>
+											<span class="pack-item-distribution">4500 of 5000 left</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<div class="col">
+								<div class="pack-item-container">
+									<a href="pack-details.html" title="View Hall of Famers">
+										<span class="pack-item-image"><img src="images/theme/nwl/pack2-mcd.png" alt="" /></span>
+										<span class="pack-item-accent"><span class="icon_brush_stroke"></span></span>
+										<span class="pack-item-text">
+											<span class="pack-item-name">Happy Meal Pack 2</span>
+											<span class="pack-item-collection">Release 1</span>
+											<span class="pack-item-price">$29.00 <span class="system-currency">USD</span></span>
+											<span class="pack-item-distribution">145 of 500 left</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<div class="col">
+								<div class="pack-item-container">
+									<a href="pack-details.html" title="View Hall of Famers">
+										<span class="pack-item-image"><img src="images/theme/nwl/pack3-mcd.png" alt="" /></span>
+										<span class="pack-item-accent"><span class="icon_brush_stroke"></span></span>
+										<span class="pack-item-text">
+											<span class="pack-item-name">Happy Meal Pack 3</span>
+											<span class="pack-item-collection">Release 1</span>
+											<span class="pack-item-price">$19.00 <span class="system-currency">USD</span></span>
+											<span class="pack-item-distribution">145 of 500 left</span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>	
+
+
+						<div class="text-align-center margin-vertical-xl">
+							<button type="button" class="btn-default btn-outline btn-outline">
+								<span class="btn-text">Load More</span>
+							</button>
+						</div>
+
+					</section>
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+
+	<footer id="footer">
+		<div class="page-width">
+			<div id="footer-inner">
+				<div class="footer-content">
+					<div class="grid-2_sm-1">
+						<div class="col-4_sm-12">
+							<div class="footer-logo">
+								<a href="index.html" title="Click to Go Home">
+									<span class="icon_logo_clipcards_knockout"></span>
+								</a>
+							</div>
+							<div class="footer-partner">
+								<a href="index.html" title="Click to visit NuarcaLabs">
+									<span class="icon_nuarca_labs"></span>
+								</a>
+							</div>
+							<div class="footer-copyright-text">
+								&copy; Copyright 2021 Clip Cards Ltd. <br/>All Rights Reserved
+							</div>
+						</div>
+						<div class="col-8_sm-12">
+							<div id="footer-links-container" class="grid-4_sm-2">
+								<div class="col-3_sm-6">
+									<div class="footer-title">Product</div>
+									<ul class="footer-links list-reset">
+										<li><a href="store.html">Store</a></li>
+										<li><a href="marketplace.html">Marketplace</a></li>
+										<li><a href="press.html">Press</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Company</div>
+									<ul class="footer-links list-reset">
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="terms_conditions.html">Terms &amp; Conditions</a></li>
+										<li><a href="privacy.html">Privacy Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Help</div>
+									<ul class="footer-links list-reset">
+										<li><a href="how_it_works.html">How it works</a></li>
+										<li><a href="faqs.html">FAQs</a></li>
+										<li><a href="feedback.html">Feedback Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Social</div>
+									<ul class="footer-links list-reset">
+										<li><a href="#" class="link-twitter" target="_blank"><span class="lab la-twitter"></span>Twitter</a></li>
+										<li><a href="#" class="link-facebook" target="_blank"><span class="lab la-facebook-f"></span>Facebook</a></li>
+										<li><a href="#" class="link-discord" target="_blank"><span class="lab la-discord"></span>Discord</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-legal">
+					<p>Officially licensed product. <a href="#">Do Not Sell My Personal Information</a>.</p>
+					<p>This site is protected by reCAPTCHA and the Google <a href="privacy.html">Privacy Policy</a> and <a href="terms_conditions.html">Terms of Service</a> apply.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- Dialog -->
+	<div class="dialog" id="dialog-share">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Share Page</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  			<p class="dialog-helper">Select where you would like to share this page too:</p>
+	  		</div>
+	  		<div class="dialog-body">
+	  			
+	  			<div class="grid">
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-full-width btn-twitter margin-vertical-xs">
+	  						<span class="btn-icon"><em class="lab la-twitter"></em></span>
+			  				<span class="btn-text">Twitter</span>
+			  			</button>
+	  				</div>
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-full-width btn-discord margin-vertical-xs">
+	  						<span class="btn-icon"><em class="lab la-discord"></em></span>
+			  				<span class="btn-text">Discord</span>
+			  			</button>
+	  				</div>
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-outline btn-full-width margin-vertical-xs">
+	  						<span class="btn-icon"><em class="las la-at"></em></span>
+			  				<span class="btn-text">Email</span>
+			  			</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		
+	  	</div>
+	</div>
+
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script type="text/javascript" src="js/dialogs.js" ></script>
+	
+</body>
+</html>

@@ -1,0 +1,121 @@
+#content-league {
+	margin:3rem 0;
+	.league-header {
+		text-align: center;
+
+		.league-logo {
+			// height: 7.5rem;
+			display: block;
+			margin:0 auto;
+
+			img {
+				height: 100%;
+				height: 7.5rem;
+			}
+		}
+	}
+
+	.league-grid {
+		@media #{$breakpoint-sm-up} {
+			margin-left: calc(100% / 12);
+			margin-right: calc(100% / 12);
+		}
+	}
+}
+
+
+.team-container {
+	position: relative;
+	display: block;
+	color:inherit;
+
+	.team-logo {
+		.team-logo-image {
+			display: block;
+			background-color: $light-grey;
+			border:0.5rem solid $white;
+			@include transition(all .3s ease);
+
+			@include border-radius(10rem);
+			
+			img {
+				width: 100%;
+				padding:10%;
+				vertical-align: top;
+			}
+		}
+	}
+
+	.team-tooltip {
+		z-index: 1;
+		position: absolute;
+		left: 50%;
+		top: 80%;
+		@include translate(-50%,0);
+		text-align: center;
+		color:$black;
+		background-color: $white;
+		@include border-radius(0.25rem);
+		padding:0.5rem;
+		min-width: 100%;
+		font-size: 0.75rem;
+		line-height: 1.0rem;
+		@include opacity(0);
+		@include box-shadow(0, 0, 1rem, rgba($black,0.2));
+			@include transition(all .3s ease);
+
+		&:before {
+			content: '';
+			position: absolute;
+		    display: block;
+			left: 50%;
+			top: -0.5rem;
+			@include translate(-50%,0);
+		    width: 0;
+		    height: 0;
+		    border-style: solid;
+		    border-width: 0 0.5rem 0.5rem 0.5rem;
+		    border-color: transparent transparent $white transparent;
+		}
+	}
+
+	&:hover {
+		.team-logo {
+			.team-logo-image {
+				border:0 solid $white;
+			}
+		}
+
+		.team-tooltip {
+			top: 100%;
+			@include opacity(1);
+			@include box-shadow(0, 0, 1rem, rgba($black,0.2));
+		}
+	}
+}
+
+
+.division-divider {
+	margin: 2rem 0;
+	height: 0.0625rem;
+	position:relative;
+	border-bottom: 3px double rgba($black,0.2);
+	text-align: center;
+	// background-color: rgba($black,0.2);
+
+	span {
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include translate(-50%,-50%);
+		padding:0.5rem;
+		background-color: $white;
+		text-transform: uppercase;
+		margin-top: 0.0635rem;
+		font-weight: 600;
+		line-height: 1.0rem;
+		font-size: 0.875rem;
+		white-space: nowrap;
+	}
+}

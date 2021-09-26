@@ -1,0 +1,123 @@
+
+$theme-images-pathway: '../images/theme/nfl';
+
+// Colors
+$black: #000000;
+$white: #FFFFFF;
+$red: #D52C20;
+$orange: #FFA126;
+$green: #37A954;
+$blue: #16A0DB;
+$light-grey:#EFEFEF;
+$mid-grey:#707070;
+$dark-grey:#353535;
+
+$theme-color-1: #D60303;
+$theme-color-2: #003069;
+
+// Header Bar
+$header-bar-color: #FFFFFF;
+$header-bar-color-inverted: #2E2C37;
+$header-bar-background-color:rgba($black,0.1);
+$header-bar-background-color-inverted: $white;
+
+$header-background-color: #131313;
+
+// Navigation
+$nav-link-color: #2E2C37;
+$nav-link-color-hover: $theme-color-1;
+
+$disabled-gray: #CCCCCC;
+
+
+// Hero Panel
+$hero-title-color: #FFFFFF;
+$hero-title-shadow: rgba($black,0.8);
+
+$hero-background-box-color:rgba(#000000,0.2);
+$hero-splatter-1-color: rgba(#000000,0.5);
+$hero-splatter-2-color:rgba(#000000,0.2);
+$hero-brushstroke-color:rgba(#000000,0.25);
+$hero-cube-1-color:$theme-color-1;
+$hero-cube-2-color:$theme-color-2;
+$hero-accent-1-color:rgba(#FFFFFF,0.2);
+$hero-accent-2-color:rgba(#FFFFFF,1);
+$hero-accent-3-color:rgba(#FFFFFF,1);
+
+
+// Marketplace on Homepage
+$marketplace-background-color:#F8F8F8;
+$card-type-le:#315BFF;
+$card-type-cc:#939699;
+$pack-type-color-1: #939699;
+$pack-type-color-2: #F0B024;
+$pack-type-color-3: #AD7FDD;
+
+$rarity-lvl5:#AD7FDD;
+$rarity-lvl4:#AD7FDD;
+$rarity-lvl3:#AD7FDD;
+$rarity-lvl2:#F0B024;
+$rarity-lvl1:#939699;
+
+
+// User Profile 
+$user-profile-color:#FFFFFF;
+$user-profile-bg:$theme-color-2;
+
+// Pack Drop
+$packdrop-bg:$theme-color-2;
+$packdrop-color:#FFFFFF;
+
+// Footer
+$footer-bg:#2E2C37;
+$footer-color:#FFFFFF;
+
+// Store
+$theme-accent-shadow: #FFFFFF;
+$featured-pack-text-color: #FFFFFF;
+$featured-pack-bg-color: $theme-color-2;
+
+$secondary-item-bg-color:#2E2C37;
+$secondary-item-text-color:#FFFFFF;
+
+$dim-background: #2E2C37;
+$dim-text-color: #FFFFFF;
+
+
+// Tabs
+$tab-active-bg: #FFFFFF;
+$tab-active-color: #232323;
+
+
+// Table 
+$table-header-background: #EFEFEF;
+$table-header-color: #353535;
+$table-row-hover: rgba($theme-color-1,0.1);
+
+// Overlay
+$overlay-background:#19181D;
+$modal-light-color:#232229;
+$modal-light-background:#FFFFFF;
+$modal-dark-color:#FFFFFF;
+$modal-dark-background:#232229;
+
+// Buttons
+$btn-primary-background:$theme-color-1;
+$btn-primary-border-color:$theme-color-1;
+$btn-primary-font-color:$white;
+
+$btn-primary-outline-background:transparent;
+$btn-primary-outline-border-color:$theme-color-1;
+$btn-primary-outline-font-color:$theme-color-1;
+
+
+$btn-secondary-background:$theme-color-2;
+$btn-secondary-border-color:$theme-color-2;
+$btn-secondary-font-color:$white;
+
+$btn-secondary-outline-background:$white;
+$btn-secondary-outline-border-color:$theme-color-2;
+$btn-secondary-outline-font-color:$theme-color-2;
+
+
+

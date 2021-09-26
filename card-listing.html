@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-control" content="public">
+	<meta name="description" content="Myodis Portal" />
+	<title>Myodis Portal</title>
+
+	<!-- CSS -->
+	<link href="css/core.css" rel="stylesheet" defer />
+
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" defer>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" defer>
+	
+	<!-- Line Awesome -->
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" defer>
+
+
+
+</head>
+<body>
+
+	<header id="header">
+
+		<div id="header-bar" class="skin-inverted fixed">
+			<div class="page-width">
+				
+				<div id="header-bar-inner">
+
+					<!-- Header Logo -->
+					<div id="header-logo">
+						<a href="index.html" title="Click to Go Home">
+							<img src="images/theme/nwl/logo.png" alt="Logo" />
+							<!-- <span class="icon_logo_clipcards_knockout"></span> -->
+						</a>
+					</div>
+
+					<div id="header-menu-trigger">
+						<button type="button" class="btn-default" id="btn-toggle-nav" onclick="toggleNav();">
+							<span class="btn-icon"><i class="las la-bars"></i></span>
+							<span class="btn-text sr-only">Menu</span>
+						</button>
+					</div>
+					
+					<!-- Navigation  -->
+					<div id="header-navigation" class="clearfix">
+						<div id="header-main-nav">
+							<ul>
+								<li><a class="nav-link" href="index.html">Home</a></li>
+								<li><a class="nav-link selected" href="my-cards.html">My Cards</a></li>
+								<li><a class="nav-link" href="store.html">Store</a></li>
+								<li><a class="nav-link" href="marketplace.html">Marketplace</a></li>
+								<!-- <li><a class="nav-link" href="how-it-works.html">How it works</a></li> -->
+								<li><a class="nav-link" href="faqs.html">FAQs</a></li>
+							</ul>
+						</div>
+
+						<div id="header-member-nav" style="display: none;">
+							<ul>
+								<li>
+									<button type="button" class="btn-default btn-outline" id="btn-login">
+										<span class="btn-text">Login</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn-default btn-secondary" id="btn-register">
+										<span class="btn-text">Register</span>
+									</button>
+								</li>
+							</ul>
+						</div>
+
+
+
+						<!-- Members Area  -->
+						<div id="header-member" style="display: block;">
+							<div class="member-container">
+								<div class="member-link">
+									<a href="javascript:void(0);" class="member-link" onclick="toggleDropdown('member-options',this);">
+										<div class="member-avatar">
+											<img src="images/member/member-profile.jpg" alt="Profile Image" />
+										</div>
+										<div class="member-content">
+											<div class="member-name">McChickenFan83</div>
+											<!-- <div class="member-rank">Collector</div> -->
+										</div>
+									</a>
+								</div>
+								<div class="member-options" id="member-options" style="display: none;">
+									<ul>
+										<li><a href="my-cards.html">My Cards <span class="item-count">9</span></a></li>
+										<li><a href="my-packs.html">My Packs <span class="item-count">0</span></a></li>
+										<li><a href="my-challenges.html">Challenges <span class="item-count">3</span></a></li>
+										<li><a href="my-buy-sell.html">Buy &amp; Sell</a></li>
+										<li><a href="my-wallet.html">My Wallet</a></li>
+										<li><a href="my-profile.html">My Profile</a></li>
+										<li><a href="index.html">Logout</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div id="header-menu-close" class="hidden">
+							<button type="button" class="btn-default" id="btn-close-nav" onclick="toggleNav();">
+								<span class="btn-icon"><i class="las la-times"></i></span>
+								<span class="btn-text sr-only">Close</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+	<!-- Only show this is the user is signed in and they are looking at their own card -->
+	
+	<section id="page-headline" class="use-theme-color"> 
+		<div class="bg-color"></div>
+		<div class="bg-image"></div>
+		<div class="bg-accent-shadow-1"></div>
+		<div class="bg-accent-shadow-2"></div>
+		<div class="bg-accent-shadow-3"></div>
+		<div class="bg-shading"></div>
+
+		<div class="page-headline-inner no-bottom-padding">
+		
+			<div class="page-width">
+
+
+						<div class="user-header-container">
+							<div class="user-header-links">
+								<ul class="list-reset list-inline">
+									<li class="margin-right-m">
+										<button type="button" class="btn-default btn-no-horizontal-padding" data-dialog="dialog-share">
+											<span class="btn-text">Share</span>
+											<span class="btn-icon"><em class="las la-share-square"></em></span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn-default btn-no-horizontal-padding" onclick="window.location='my-profile.html'">
+											<span class="btn-text">Edit Profile</span>
+											<span class="btn-icon"><em class="las la-user-alt"></em></span>
+										</button>
+									</li>
+								</ul>
+							</div>
+							<div class="user-header-avatar">
+								<div class="user-header-avatar-image">
+									<img src="images/member/member-profile.jpg" alt="Profile Image" />
+								</div>
+								
+							</div>
+							<div class="user-header-content">
+								<div class="user-header-username">@Washfan282</div>
+								<div class="user-header-realname">Alex Anderson</div>
+								<div class="user-header-attributes">
+									<!-- Not Needed for MVP -->
+									<!--
+									<ul id="user-header-attributes-list" class="list-reset list-inline">
+										<li>
+											<div class="attribute-container">
+												<span class="attribute-icon"><em class="las la-trophy"></em></span>
+												<span class="attribute-text">Achievements:</span>
+												<span class="attribute-count">4</span>
+											</div>
+										</li>
+										<li>
+											<div class="attribute-container">
+												<span class="attribute-icon"><em class="las la-medal"></em></span>
+												<span class="attribute-text">Rating:</span>
+												<span class="attribute-count">Collector</span>
+											</div>
+										</li>
+									</ul>
+									-->
+								</div>
+							</div>
+							<div class="user-header-tabs">
+								<ul class="tab-list">
+									<li><a href="my-cards.html" class="tab-link selected">My Cards</a></li>
+									<li><a href="my-packs.html" class="tab-link">My Packs</a></li>
+									<li><a href="my-challenges.html" class="tab-link">Challenges</a></li>
+									<li><a href="my-buy-sell.html" class="tab-link">Buy / Sell</a></li>
+								</ul>
+							</div>
+						</div>
+					
+					
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+
+	<!-- Page Content -->
+	<section id="page-content">
+
+		<div class="page-width">
+			<div id="page-content-inner">
+
+				<div id="page-content-body">
+
+					<div class="grid">
+						<div class="col-6_xs-12_sm-12">
+
+							<div class="card-listing-container card-listing">
+								<a class="card-listing-item" href="javascript:void(0);" onclick="repeatViewModal();">
+									<span class="card-listing-image-container">
+										<span class="card-listing-image">
+
+											<span class="card-list-overlay">
+												<span class="card-list-details-shading"></span>
+												<span class="card-list-details-position">RF</span>
+												<span class="card-list-details-number">5</span>
+												<span class="card-list-details-rarity type-lvl3">Legend</span>
+												<span class="card-list-details-name">Pete Alonso</span>
+												<span class="card-list-details-team-logo"><img src="images/theme/nwl/teams/Madison Mallards.png" alt="Madison Mallards" /></span>
+												<span class="card-list-details-distribution"><span class="card-list-details-distribution-value">2</span><span class="card-list-details-distribution-total">150</span></span>
+											</span>
+
+											<img src="images/theme/nwl/card-opening-3.jpg" alt="Pete Alonso" />
+											<span class="card-listing-shadow">
+												<span class="card-shadow-1"><span></span></span>
+												<span class="card-shadow-2"><span></span></span>
+											</span>
+										</span>
+
+										<span class="card-listing-splatter-1"><span class="icon_splatter_1"></span></span>
+										<span class="card-listing-splatter-2"><span class="icon_splatter_2"></span></span>
+										<span class="card-listing-brushstroke"><span class="icon_brush_stroke"></span></span>
+									</span>
+
+								</a>
+							</div>
+
+							
+
+						</div>
+						<div class="col-6_xs-12_sm-12">
+							
+							<div class="card-listing-serial-details">
+								<div class="grid-spaceBetween">
+									<div class="col-auto"><div class="card-listing-serial-label">Serial Number</div></div>
+									<div class="col-auto"><div class="card-listing-serial-value"><span>#2</span> / 150</div></div>
+								</div>
+							</div>
+
+							<div class="card-listing-team-details">
+								<div class="grid-spaceBetween">
+									<div class="col-auto"><div class="card-listing-team-position-number">RF #5</div></div>
+									<div class="col-auto"><div class="card-listing-team-logo"><img src="images/theme/nwl/teams/Madison Mallards.png" alt="Madison Mallards" /></div></div>
+								</div>
+							</div>
+
+							<h1 class="card-listing-name">Pete Alonso</h1>
+							<h3 class="card-listing-title">Pete Alonso crushes his first HR in the Northwoods League</h3>
+
+							<div class="card-listing-pack-info">
+								<div class="card-listing-pack-name">Off-Season Training Pack</div>
+								<div class="card-listing-pack-drop">Drop 4</div>
+								<div class="card-listing-rarity type-lvl3">legend</div>
+							</div>
+
+							<div class="card-listing-description">
+								<p>Alonso led Madison with 5 RBI in a route of Kenosha 13-4. </p>
+							</div>
+
+							<div class="card-listing-owner">
+								<p>Owned by <a href="my-cards.html">@McChickenFan83</a></p>
+							</div>
+
+							<div class="card-listing-sell">
+								<div class="grid-noGutter">
+									<!-- Not Needed for MVP -->
+									<div class="col-auto">
+										<button type="button" class="btn-default btn-primary margin-right-s">
+											<span class="btn-icon"><em class="las la-shopping-cart"></em></span>
+											<span class="btn-text">Sell Item</span>
+										</button>
+									</div>
+									<div class="col-auto">
+										<button type="button" class="btn-default btn-outline" data-dialog="dialog-share-nft">
+											<span class="btn-text">Share</span>
+											<span class="btn-icon"><em class="las la-share-square"></em></span>
+										</button>
+									</div>
+									<!-- Not Needed for MVP -->
+									<div class="col">
+										<button type="button" class="btn-default" data-dialog="dialog-add-gallery">
+											<span class="btn-icon"><em class="las la-folder-plus"></em></span>
+											<span class="btn-text">Gallery</span>
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="card-listing-explorer">
+								<!-- <div class="grid">
+									<div class="col-12"><strong>Address</strong></div>
+									<div class="col_12"><a href="https://etherscan.io/address/0xbfb99893d04f72e2916c8f266e1b2962871a8dd4" target="_blank" class="contract-address">0xbfb99893d04f72e2916c8f266e1b2962871a8dd4 </a></div>
+								</div> -->
+
+								<div class="grid">
+									<div class="col-12"><strong>Token ID</strong></div>
+									<div class="col_12"><a href="#" class="token-id" title="308763684327611653">308763684327611653</a></div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+					<div class="padding-vertical-xl"></div>
+
+					<!-- Not Available for MVP -->
+					
+					<div class="grid">
+						
+						<div class="col-4_xs-12_sm-12">
+							<h2 class="body-text-title">Player Details</h2>
+
+							<div class="grid">
+								<div class="col">
+									<div class="stat-container emphasize">
+										<div class="stat-label">Height</div>
+										<div class="stat-value">6' 0"</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="stat-container emphasize">
+										<div class="stat-label">Weight</div>
+										<div class="stat-value">185 lb</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="stat-container emphasize">
+										<div class="stat-label">Age</div>
+										<div class="stat-value">26</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="stat-container">
+								<div class="stat-label">Birthplace</div>
+								<div class="stat-value">Toledo, OH</div>
+							</div>
+
+							<div class="stat-container">
+								<div class="stat-label">Born</div>
+								<div class="stat-value">April 29, 1995</div>
+							</div>
+
+							<div class="stat-container">
+								<div class="stat-label">Bats</div>
+								<div class="stat-value">Left</div>
+							</div>
+
+							<div class="stat-container">
+								<div class="stat-label">Throws</div>
+								<div class="stat-value">Right</div>
+							</div>
+
+							<div class="stat-container">
+								<div class="stat-label">Draft</div>
+								<div class="stat-value">Drafted by the LA Dodgers in the 33rd round of the 2016 MLB June Amateur Draft.</div>
+
+							</div>
+
+
+
+						</div>
+						<div class="col-4_xs-12_sm-12">
+							<h2 class="body-text-title">Player Stats</h2>
+							<div class="grid-3">
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="Wins Above Replacement">WAR</attr></div>
+										<div class="attr-score">-0.1</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="At Bats">AB</attr></div>
+										<div class="attr-score">127</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="Hits / Hits Allowed">H</attr></div>
+										<div class="attr-score">30</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-medium" style="width: 76%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="Homeruns">HR</attr></div>
+										<div class="attr-score">5</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="Batting Average">BA</attr></div>
+										<div class="attr-score">.250</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-low" style="width: 49%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="Runs Scored / Allowed">R</attr></div>
+										<div class="attr-score">16</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="Runs Batted In">RBI</attr></div>
+										<div class="attr-score">26</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="Stolen Bases">SB</attr></div>
+										<div class="attr-score">1</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="?">OPB</attr></div>
+										<div class="attr-score">.303</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="?">SLG</attr></div>
+										<div class="attr-score">.433</div>
+										<div class="attr-score-bar"  style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="?">OPS</attr></div>
+										<div class="attr-score">.736</div>
+										<div class="attr-score-bar" style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="attr-container">
+										<div class="attr-name"><attr title="?">OPS+</attr></div>
+										<div class="attr-score">102</div>
+										<div class="attr-score-bar" style="display:none;">
+											<div class="attr-score-value score-high" style="width: 93%;"></div>
+											<div class="attr-score-track"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-4_xs-12_sm-12">
+							<h2 class="body-text-title">Challenges</h2>
+
+							<div class="challenge-link">
+								<a href="challenge-details.html">
+									<span class="challenge-image">
+										<img src="images/theme/nwl/challenge-1.jpg" alt="Challenge 1" />
+									</span>
+									<span class="challenge-text">
+										<span class="challenge-title">Northwoods League 2018 Championship</span>
+										<span class="challenge-desc">Collect all 24 cards from 2018 starting lineup for the NWL Championship.</span>
+										<span class="challenge-progress">2 cards collected</span>
+									</span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="padding-vertical-xl"></div>
+					
+
+					<!-- Not Available for MVP -->
+					
+					<div class="grid">
+						<div class="col-12">
+							<h2 class="body-text-title">Recent Sales History</h2>
+
+							<div class="table-container">
+								<table class="responsive">
+									<caption class="sr-only">Recent Sales History</caption>
+									<thead>
+										<tr>
+											<th>Moment</th>
+											<th>Price</th>
+											<th>Serial</th>
+											<th>Set</th>
+											<th>Series</th>
+											<th>Buyer</th>
+											<th>Seller</th>
+											<th>Date/Time</th>
+											<th>TX</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="no-data-label row-title" data-label="Moment">
+												<div>
+													<a href="card-listing.html" class="sale-item-link">
+														<span class="moment-image"><img src="images/theme/nwl/card-opening-3.jpg" alt="Pete Alonso" /></span>
+														<span class="moment-name">Pete Alonso</span>
+													</a>
+												</div>
+											</td>
+											<td data-label="Price"><div>$32.00</div></td>
+											<td data-label="Serial"><div>Common</div></td>
+											<td data-label="Set"><div>Off-Season Training</td>
+											<td data-label="Series"><div>Drop 4</div></td>
+											<td data-label="Buyer"><div><a href="my-cards.html">@McChickenFan83</a></div></td>
+											<td data-label="Seller"><div><a href="my-cards.html">@TimJackson92</a></div></td>
+											<td data-label="Date/Time"><div>Feb 28, 2021 - 3:52 PM</div></td>
+											<td data-label="Transaction">
+												<div>
+													<a class="sale-item-tx" href="https://flowscan.org/transaction/6d653544c18be6562dfd3e21886b2d682ef0aba40428e0b86b38601d2240f686" target="_blank" title="View Transaction">
+														<span class="sale-item-tx-icon"><em class="las la-external-link-square-alt"></em></span>
+														<span class="sale-item-tx-text sr-only">View Transaction</span>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="no-data-label row-title" data-label="Moment">
+												<div>
+													<a href="card-listing.html" class="sale-item-link">
+														<span class="moment-image"><img src="images/theme/nwl/card-opening-3.jpg" alt="Pete Alonso" /></span>
+														<span class="moment-name">Pete Alonso</span>
+													</a>
+												</div>
+											</td>
+											<td data-label="Price"><div>$32.00</div></td>
+											<td data-label="Serial"><div>Common</div></td>
+											<td data-label="Set"><div>Off-Season Training</td>
+											<td data-label="Series"><div>Drop 4</div></td>
+											<td data-label="Buyer"><div><a href="my-cards.html">@TimJackson92</a></div></td>
+											<td data-label="Seller"><div><a href="my-cards.html">@TopShooter</a></div></td>
+											<td data-label="Date/Time"><div>Feb 21, 2021 - 8:33 AM</div></td>
+											<td data-label="Transaction">
+												<div>
+													<a class="sale-item-tx" href="https://flowscan.org/transaction/6d653544c18be6562dfd3e21886b2d682ef0aba40428e0b86b38601d2240f686" target="_blank" title="View Transaction">
+														<span class="sale-item-tx-icon"><em class="las la-external-link-square-alt"></em></span>
+														<span class="sale-item-tx-text sr-only">View Transaction</span>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<!--
+										<tr>
+											<td colspan="9">
+												<div class="text-align-center">There have been no recent sales for this item</div>
+											</td>
+										</tr>
+										-->
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+	<footer id="footer">
+		<div class="page-width">
+			<div id="footer-inner">
+				<div class="footer-content">
+					<div class="grid-2_sm-1">
+						<div class="col-4_sm-12">
+							<div class="footer-logo">
+								<a href="index.html" title="Click to Go Home">
+									<span class="icon_logo_clipcards_knockout"></span>
+								</a>
+							</div>
+							<div class="footer-partner">
+								<a href="index.html" title="Click to visit NuarcaLabs">
+									<span class="icon_nuarca_labs"></span>
+								</a>
+							</div>
+							<div class="footer-copyright-text">
+								&copy; Copyright 2021 Clip Cards Ltd. <br/>All Rights Reserved
+							</div>
+						</div>
+						<div class="col-8_sm-12">
+							<div id="footer-links-container" class="grid-4_sm-2">
+								<div class="col-3_sm-6">
+									<div class="footer-title">Product</div>
+									<ul class="footer-links list-reset">
+										<li><a href="store.html">Store</a></li>
+										<li><a href="marketplace.html">Marketplace</a></li>
+										<li><a href="press.html">Press</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Company</div>
+									<ul class="footer-links list-reset">
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="terms_conditions.html">Terms &amp; Conditions</a></li>
+										<li><a href="privacy.html">Privacy Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Help</div>
+									<ul class="footer-links list-reset">
+										<li><a href="how_it_works.html">How it works</a></li>
+										<li><a href="faqs.html">FAQs</a></li>
+										<li><a href="feedback.html">Feedback Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Social</div>
+									<ul class="footer-links list-reset">
+										<li><a href="#" class="link-twitter" target="_blank"><span class="lab la-twitter"></span>Twitter</a></li>
+										<li><a href="#" class="link-facebook" target="_blank"><span class="lab la-facebook-f"></span>Facebook</a></li>
+										<li><a href="#" class="link-discord" target="_blank"><span class="lab la-discord"></span>Discord</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-legal">
+					<p>Officially licensed product. <a href="#">Do Not Sell My Personal Information</a>.</p>
+					<p>This site is protected by reCAPTCHA and the Google <a href="privacy.html">Privacy Policy</a> and <a href="terms_conditions.html">Terms of Service</a> apply.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<div class="dialog" id="dialog-add-gallery">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Add to Gallery</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  			<p class="dialog-helper">Select which gallery you'd like to associate this item to..</p>
+	  		</div>
+	  		<div class="dialog-body">
+
+	  			<div class="form-row">
+	  				<div class="form-label sr-only">
+	  					<label for="my-galleries">Select Gallery</label>
+	  				</div>
+	  				<div class="form-input">
+	  					<select class="inputbox" id="my-galleries">
+	  						<option value="">Top Plays of 2021</option>
+	  					</select>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-footer">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-text">Cancel</span>
+	  					</button>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-primary dialog-exit">
+	  						<span class="btn-text">Add to Gallery</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>	    	
+	  	</div>
+	</div>
+
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script type="text/javascript" src="js/dialogs.js" ></script>
+
+
+
+
+
+	<!-- *********** -->
+	<!--     MODAL   -->
+	<!-- *********** -->
+
+	<div id="overlay" class=""> <!-- add class 'visible' for testing -->
+
+
+		<dialog id="pack-card-container" class="modal-container modal-dark "> <!-- add class 'active' for testing -->
+			<div class="modal-header">
+				<div class="grid-spaceBetween-middle">
+					<div class="col-auto"><h3 class="sr-only">Card Details</h3></div>
+					<div class="col-auto">
+						<button class="btn-default btn-no-horizontal-padding" type="button" id="btn-close-pack-dialog" title="Close Dialog" onclick="hideModal('pack-card-container');">
+							<span class="btn-icon"><em class="las la-times"></em></span>
+							<span class="btn-text sr-only">Close Dialog</span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="modal-body">
+
+				<div class="modal-shading">
+					<div class="modal-shading-1"></div>
+					<div class="modal-shading-2"></div>
+					<div class="modal-shading-3"></div>
+					<div class="modal-team-logo"><img src="images/theme/nwl/teams/Madison Mallards.png" alt="Madison Mallards" /></div>
+				</div>
+
+				<div class="modal-content-container grid-noGutter-middle" >
+					<div class="col-7_sm-12">
+						<div class="carousel-container">
+							<div class="cards">
+							  	<div id="cards__content" class="cards__content">
+							  		
+							  		<!-- Player -->
+							    	<div class="cards__item">
+							    		<div class="card-player">
+							    			<div class="card-player-front">
+							    				<div class="card-player-container">
+													<div class="card-player">
+														<div class="card-player-overlay">
+															<div class="card-player-details-shading"></div>
+															<div class="card-player-details-position">RF</div>
+															<div class="card-player-details-number">5</div>
+															<div class="card-player-details-rarity type-lvl3">Legend</div>
+															<div class="card-player-details-name">Pete Alonso</div>
+															<div class="card-player-details-team-logo"><img src="images/theme/nwl/teams/Madison Mallards.png" alt="Madison Mallards" /></div>
+															<div class="card-player-details-distribution"><div class="card-player-details-distribution-value">2</div><div class="card-player-details-distribution-total">150</div></div>
+														</div>
+														<img src="images/theme/nwl/card-opening-3.jpg" alt="Pete Alonso">
+													</div>
+												</div>
+							    			</div>
+							    		</div>
+							    	</div>
+
+							    	<!-- Video -->
+							    	<div class="cards__item">
+							    		<div class="card-video">
+							    			<div class="card-video-front">
+							    				<div class="card-video-container">
+							    					<div class="card-video-button">
+										    			<button type="button" class="btn-default card-video-button" id="btn-watch-video" onclick="playVideoFile();">
+										    				<span class="btn-icon"><span class="icon_play"></span></span>
+										    				<span class="btn-text">Watch</span>
+										    			</button>
+										    		</div>
+							    					<div class="card-video-image">
+							    						<img src="images/theme/nwl/card-stats-back.jpg" alt="Background" />
+							    					</div>
+							    					<div class="card-video-small-container">
+							    						<video id="card-video-small" class="card-video-small" controls="false" muted="" loop="true" autoplay="true" playsinline width="100%" video="100%">
+															<source src="video/alonso.mp4" type="video/mp4" />
+														</video>
+
+							    					</div>
+
+									    		</div>
+
+											</div>
+							    		</div>
+							    	</div>
+
+							    	<!-- Team -->
+							    	<div class="cards__item">
+							    		<div class="card-team">
+							    			<div class="card-team-front">
+							    				<div class="card-team-container">
+							    					<div class="card-team-background-color" style="background-color: #457197;"></div>
+							    					<div class="card-team-background-texture"></div>
+							    					<div class="card-team-logo"><img src="images/theme/nwl/teams/Madison Mallards.png" alt="Madison Mallards" /></div>
+							    					<div class="card-team-name" style="color:#FFFFFF;">Madison Mallards</div>
+							    				</div>
+
+							    			</div>
+							    		</div>
+							    	</div>
+
+							    	<!-- Stats -->
+							    	<div class="cards__item">
+							    		<div class="card-stats">
+							    			<div class="card-stats-front">
+							    				<div class="card-stats-container">
+							    					<div class="card-stats-game">Week 15, Game 4</div>
+							    					<div class="card-stats-date">Dec 13, 2020</div>
+							    					<div class="card-stats-location">State Farm Stadium</div>
+
+							    					<div class="card-stats-team team-1">
+							    						<div class="card-stats-team-score">13</div>
+							    						<div class="card-stats-team-logo"><img src="images/theme/nwl/teams/Madison Mallards.png" alt="Madison Mallards"></div>
+							    						<div class="card-stats-team-abbr">MAD</div>
+							    						<div class="card-stats-team-stats">(2-1-0)</div>
+							    					</div>
+
+							    					<div class="card-stats-versus"><span>VS</span></div>
+
+							    					<div class="card-stats-team team-2">
+							    						<div class="card-stats-team-score">4</div>
+							    						<div class="card-stats-team-logo"><img src="images/theme/nwl/teams/Kenosha Kingfish.png" alt="Kenosha Kingfish"></div>
+							    						<div class="card-stats-team-abbr">KEN</div>
+							    						<div class="card-stats-team-stats">(1-2-0)</div>
+							    					</div>
+
+							    					<div class="card-stats-full-time"><span>Full Time</span></div>
+							    					<div class="card-stats-image">
+							    						<img src="images/theme/nwl/card-stats-back.jpg" alt="Background">
+							    					</div>
+							    				</div>
+							    			</div>
+							    		</div>
+							    	</div>
+
+							  	</div>
+							</div>
+							<div class="card-shadow">
+								<span class="icon_brush_stroke"></span>
+							</div>
+
+							<div class="card-actions">
+								<button type="button" class="btn-default btn-rounded" id="btn-slide-prev" onclick="slide_prev();">
+									<span class="btn-icon"><em class="las la-arrow-left"></em></span>
+									<span class="btn-text sr-only">Prev</span>
+								</button>
+								<button type="button" class="btn-default btn-rounded margin-horizontal-m" id="btn-pause_play" onclick="slide_pause_play();">
+									<span class="btn-icon"><em class="las la-pause"></em></span>
+									<span class="btn-text sr-only">Pause</span>
+								</button>
+								<button type="button" class="btn-default btn-rounded" id="btn-slide-next" onclick="slide_next();">
+									<span class="btn-icon"><em class="las la-arrow-right"></em></span>
+									<span class="btn-text sr-only">Next</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-5_sm-12">
+						<div class="modal-content">
+							<div class="card-listing-content">
+								<h1 class="card-listing-name">Pete Alonso</h1>
+								<div class="card-listing-title">Pete Alonso crushes his first HR in the Northwoods League</div>
+								<div class="card-listing-description">Alonso led Madison with 5 RBI in a route of Kenosha 13-4. </div>
+								<div class="card-listing-divider"></div>
+								<div class="card-listing-collection">Off-Season Training</div>
+								<div class="card-listing-release">Drop 4</div>
+								<div class="card-listing-rarity lvl3">Legend</div>
+								<div class="card-listing-distribution"><div class="card-listing-distribution-value">2</div><div class="card-listing-distribution-total">150</div></div>
+								
+								<div class="margin-top-xl"></div>
+
+								<div class="card-listing-explorer">
+									<div class="grid">
+										<div class="col-12"><strong>Token ID</strong></div>
+										<div class="col_12"><a href="#" class="token-id" title="308763684327611653">308763684327611653</a></div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- This is the Main Video that plays -->
+				<div id="card-video-player" class="card-video-player hidden">
+					<video id="card-video" controls="" playsinline width="100%" video="100%" style="width:100%; height:100%">
+						<source src="video/alonso.mp4" type="video/mp4" />
+					</video>
+				</div>
+				
+			</div>
+		</dialog>
+
+	</div>
+
+
+	
+	<!-- Dialog -->
+	<div class="dialog" id="dialog-share-nft">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Share Item</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  			<p class="dialog-helper">Select where you would like to share this to:</p>
+	  		</div>
+	  		<div class="dialog-body">
+	  			
+	  			<div class="grid">
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-full-width btn-twitter margin-vertical-xs">
+	  						<span class="btn-icon"><em class="lab la-twitter"></em></span>
+			  				<span class="btn-text">Twitter</span>
+			  			</button>
+	  				</div>
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-full-width btn-discord margin-vertical-xs">
+	  						<span class="btn-icon"><em class="lab la-discord"></em></span>
+			  				<span class="btn-text">Discord</span>
+			  			</button>
+	  				</div>
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-outline btn-full-width margin-vertical-xs">
+	  						<span class="btn-icon"><em class="las la-at"></em></span>
+			  				<span class="btn-text">Email</span>
+			  			</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		
+	  	</div>
+	</div>
+
+
+
+	<!-- Dialog -->
+	<div class="dialog" id="dialog-share">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Share Page</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  			<p class="dialog-helper">Select where you would like to share this page too:</p>
+	  		</div>
+	  		<div class="dialog-body">
+	  			
+	  			<div class="grid">
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-full-width btn-twitter margin-vertical-xs">
+	  						<span class="btn-icon"><em class="lab la-twitter"></em></span>
+			  				<span class="btn-text">Twitter</span>
+			  			</button>
+	  				</div>
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-full-width btn-discord margin-vertical-xs">
+	  						<span class="btn-icon"><em class="lab la-discord"></em></span>
+			  				<span class="btn-text">Discord</span>
+			  			</button>
+	  				</div>
+	  				<div class="col-4_xs-12">
+	  					<button type="button" class="btn-default btn-outline btn-full-width margin-vertical-xs">
+	  						<span class="btn-icon"><em class="las la-at"></em></span>
+			  				<span class="btn-text">Email</span>
+			  			</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		
+	  	</div>
+	</div>
+
+	<script>
+
+		// Automatically scroll through slides
+		var autoplayValue = 'no';
+		var clickedCard; 
+		var carousel = document.getElementById("cards__content");
+		var currdeg = 0;
+		var playloop;
+
+
+		function autoPlayCarousel(play_status){
+			autoplayValue = play_status;
+
+			var pauseBtn = document.getElementById("btn-pause_play");
+			var pauseBtnIcon =  pauseBtn.getElementsByClassName("btn-icon")[0];
+
+
+			if (autoplayValue == 'yes') {
+				pauseBtnIcon.childNodes[0].classList.remove('la-redo-alt');
+				pauseBtnIcon.childNodes[0].classList.add('la-pause');
+				playloop = setInterval(loopThroughCards,2000);
+			} else {
+				pauseBtnIcon.childNodes[0].classList.add('la-redo-alt');
+				pauseBtnIcon.childNodes[0].classList.remove('la-pause');
+				clearInterval(playloop);				
+			}
+
+			// console.log("Carousel is set to " + autoplayValue)
+		}
+
+
+		function loopThroughCards(){
+			currdeg = currdeg - 90;
+			carousel.style.transform = "rotateY(" + currdeg + "deg)";
+		}
+
+
+		function slide_pause_play(){
+			if (autoplayValue == 'yes') {
+				autoPlayCarousel('no');
+			} else {
+				autoPlayCarousel('yes');
+			}
+		}
+
+		function slide_prev(){
+			currdeg = currdeg + 90;
+			carousel.style.transform = "rotateY(" + currdeg + "deg)";
+			autoPlayCarousel('no'); // Disable Autoplay
+		}
+
+		function slide_next(){
+			currdeg = currdeg - 90;
+			carousel.style.transform = "rotateY(" + currdeg + "deg) ";
+			autoPlayCarousel('no'); // Disable Autoplay
+		}
+
+
+		// Preload the Audio file for Mobile Devuices
+		var audioFlip = new Audio();
+			audioFlip.src = 'sounds/flip.mp3';
+			audioFlip.muted = true;
+
+		var audioSwoosh = new Audio();
+			audioSwoosh.src = 'sounds/swoosh.mp3';
+			audioSwoosh.muted = true;
+
+		var audioSwoosh2 = new Audio();
+			audioSwoosh2.src = 'sounds/swoosh2.mp3';
+			audioSwoosh2.muted = true;
+
+		var audioTear = new Audio();
+			audioTear.src = 'sounds/tear1.mp3';
+			audioTear.muted = true;
+
+		var audioOpening = new Audio();
+			audioOpening.src = 'sounds/riser_opening.mp3';
+			audioOpening.muted = true;
+
+		var audioBuildup = new Audio();
+			audioBuildup.src = 'sounds/buildup.mp3';
+			audioBuildup.muted = true;
+
+		var audioCheer = new Audio();
+			audioCheer.src = 'sounds/cheer.mp3';
+			audioCheer.muted = true;
+
+		var audioBaseballHit = new Audio();
+			audioBaseballHit.src = 'sounds/baseballhit.mp3';
+			audioBaseballHit.muted = true;
+
+		var audioOrgan = new Audio();
+			audioOrgan.src = 'sounds/organ.mp3';
+			audioOrgan.muted = true;
+
+
+
+		function openPack(){
+			document.getElementById("btn-show-pack").click(); // Trigger clicking on the pack, even if you click on the button
+
+			// Load the Sound bytes
+			audioFlip.addEventListener('canplaythrough', audioFlip.play , false);
+			audioSwoosh.addEventListener('canplaythrough', audioSwoosh.play , false);
+			audioSwoosh2.addEventListener('canplaythrough', audioSwoosh2.play , false);
+			audioTear.addEventListener('canplaythrough', audioTear.play , false);
+			audioOpening.addEventListener('canplaythrough', audioOpening.play , false);
+			audioBuildup.addEventListener('canplaythrough', audioBuildup.play , false);
+			audioCheer.addEventListener('canplaythrough', audioCheer.play , false);
+			audioBaseballHit.addEventListener('canplaythrough', audioBaseballHit.play , false);
+			audioOrgan.addEventListener('canplaythrough', audioOrgan.play , false);
+		};
+
+
+
+		function revealCard(element){
+
+			document.getElementById("page-texture").classList.add('dim-lights');
+
+			var packContainer = document.getElementById("scene-pack-container");
+			var floor = document.getElementById("scene-floor");
+			var sceneContainer = document.getElementById("scene-container");
+			var sceneButtons = document.getElementById("scene-buttons");
+			var revealButtons = document.getElementById("reveal-buttons");
+  			
+				element.parentElement.parentElement.classList.add("vibrate");
+				audioOpening.muted = false;
+				audioBuildup.muted = false;
+				audioBuildup.volume = 0.2;
+				audioCheer.muted = false;
+				audioBaseballHit.muted = false;
+				audioOrgan.muted = false;
+				audioOrgan.volume = 0.2;
+
+				audioBuildup.play();
+				audioOpening.play();
+				
+				
+
+				sceneButtons.style.display = 'none';
+
+			//Wait 2 seconds for opening pack animation 
+			setTimeout(function() { 
+				audioTear.muted = false;
+				audioTear.play();
+					// audioBaseballHit.play();
+					// audioOrgan.play();
+				element.parentElement.parentElement.classList.remove("vibrate");
+				element.parentElement.parentElement.classList.add("tear-open");
+
+				setTimeout(function() {
+					// element.parentElement.parentElement.classList.add("slide-out-bottom");	
+					element.parentElement.parentElement.classList.add("puff-out-center");	
+
+					floor.classList.add("fadeOut");	
+
+					setTimeout(function() {
+						packContainer.remove();	
+						floor.remove();
+						sceneButtons.remove();
+						sceneContainer.classList.remove('animated');
+
+						// Loop through each card and animate it in.
+						var myCards = document.getElementsByClassName("card-reveal-container");
+						for(var i = 0; i < myCards.length; i++){
+							myCards[i].style.display = 'block';
+							myCards[i].classList.add('slide-in-card');
+						}
+
+						// Wait 1 second before showing reveal all buttons
+						setTimeout(function() { 
+
+							revealButtons.style.display = 'block';
+							revealButtons.classList.add("slide-in-bottom");
+						}, 800);
+
+					}, 1000);
+				}, 250);
+			}, 2000);
+		};
+
+		// Define custom property for if video is playing this is so that we can trigger certain events if the user cancels before the video stops.
+		Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
+		    get: function(){
+		        return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+		    }
+		})
+
+
+		function hideModal(target){
+
+			if(document.getElementById('card-video').playing){ // checks if video is playing right now
+			    document.getElementById('card-video').pause(); // Pause the current playing video if there is one
+				document.getElementById('card-video').currentTime = 0; // Reset the time     	
+				
+			    videoEndedPlaying();
+
+			} else { 
+				// If not playing, close modal window
+				document.getElementById('card-video').pause(); // Pause the current playing video if there is one
+				document.getElementById('card-video').currentTime = 0; // Reset the time     	
+				document.getElementById('card-video-player').classList.add('hidden'); // Hide the Video Player
+				document.getElementById('card-video-player').style.zIndex = "-1"; // Move Video to back after fadeOut;
+				document.body.classList.remove("noScroll");  // Enable Page Scrolling
+				document.getElementById(target).classList.remove('active'); // Hide Active Dialog
+				document.getElementById('cards__content').classList.remove('animated'); // Remove Card Spinning Animation
+				document.getElementById('btn-close-pack-dialog').style.opacity = 1; // Show the Close Dialog Button
+				setTimeout(function() {  
+					document.getElementById("overlay").classList.remove('visible'); // Hide Overlay
+				}, 200);
+
+				autoPlayCarousel('no');
+
+
+			    // Show Revealed Player instead 
+				// var revealedCard;
+				// var revealedPlayer;
+
+				if (clickedCard) {
+					document.getElementById(clickedCard + '-container').querySelector('.card-reveal-container').remove();
+					document.getElementById(clickedCard + '-container').querySelector('.card-listing-container').style.display = 'block';
+			    }
+
+			}
+		};
+
+
+
+		function showModal(element, target){
+			// Reset the Carousel to be 0;
+			currdeg = 0
+			carousel.style.transform = "rotateY(" + currdeg + "deg)";
+
+			// Pass the target container of the clicked card
+			clickedCard = element.id;
+
+			audioFlip.muted = false;
+			audioFlip.play();
+
+			audioSwoosh.muted = false;
+			audioSwoosh.play();
+
+			audioSwoosh2.muted = false;
+			audioSwoosh2.play();
+
+
+			element.children[0].classList.add('puff-out-center'); // Aniated Selected Card 
+			element.children[1].classList.add('puff-out-center-reverse'); // Aniated Selected Card 
+
+			setTimeout(function() { // Wait 3 seconds before launching modal
+				
+				document.body.classList.add("noScroll");  // Prevent Page from Scrolling
+				window.scrollTo(0, 0); // Scroll to top for mobile devices
+				document.getElementById('overlay').classList.add('visible'); // Show Overlay	
+
+				setTimeout(function() { 
+					document.getElementById(target).classList.add('active'); // Show Pack Modal 
+				}, 200);
+
+				setTimeout(function() { 
+					element.parentElement.classList.add('puff-out-center'); // Remove Animated Card Flip in background
+					element.parentElement.classList.remove('flip-scale-up-ver'); // Remove Animated Card Scale in background
+				}, 1500);
+
+				// Trigger the jump to the next slide after 2s to watch the video
+				setTimeout(function(){
+					currdeg = currdeg - 90;
+					carousel.style.transform = "rotateY(" + currdeg + "deg) ";
+
+					// Trigger the play btn to watch the video after 0.5s
+					var watchVidBtn = document.getElementById('btn-watch-video'); // Get the Next Slide btn and trigger a click even to slide over to vide card
+					setTimeout(function(){
+
+						// only auto start the video if the dialog is active
+						if (document.querySelector("#pack-card-container").classList.contains('active'))  {
+							watchVidBtn.click();
+						} 
+						
+					},1500);
+				},2000);
+			}, 2000);
+		};
+
+		// This is what happens when the user clicks on a card that is viewed already
+		function repeatViewModal() {
+			document.body.classList.add("noScroll");  // Prevent Page from Scrolling
+			window.scrollTo(0, 0); // Scroll to top for mobile devices
+			document.getElementById('overlay').classList.add('visible'); // Show Overlay
+
+			// Reset the Carousel to be 0;
+			currdeg = 0
+			carousel.style.transform = "rotateY(" + currdeg + "deg)";	
+			
+			setTimeout(function() { 
+				document.getElementById('pack-card-container').classList.add('active'); // Show Pack Modal 
+			}, 200);
+		};
+
+
+		function playVideoFile(){
+			document.getElementById('card-video-player').classList.remove('hidden'); // Show the Video Player Container
+			document.getElementById('card-video-player').style.zIndex = "1";
+			document.getElementById('card-video').play(); // Start to Play the Video
+			document.getElementById('cards__content').classList.remove('animated'); // Stop the carousel from spinning
+		};
+
+		// Listen for when the video ends playing
+		document.getElementById('card-video').addEventListener('ended',videoEndedPlaying,false); // Listen for when the video element ends and close it off
+	    
+	    // Trigger this function at the end of the video playing
+	    function videoEndedPlaying() {
+			document.getElementById('card-video-player').classList.add('hidden'); // Hide the Video Player
+			document.getElementById('cards__content').classList.add('animated'); // Start the carousel spinning again
+			var nextSlideBtn = document.getElementById('btn-slide-next'); // Get the Next Slide btn and trigger a click even to slide over to vide card
+				
+			autoPlayCarousel('yes');
+			
+			setTimeout(function() { 
+				document.getElementById('card-video-player').style.zIndex = "-1"; // Move Video to back after fadeOut;
+			}, 300);
+	    };		
+
+
+	
+
+
+	    function revealAllCards(){
+	    	var myCards = document.getElementsByClassName("card-reveal-container");
+
+			audioFlip.muted = false;
+			audioFlip.play();
+
+			audioSwoosh.muted = false;
+			audioSwoosh.play();
+
+			audioSwoosh2.muted = false;
+			audioSwoosh2.play();
+
+			for(var i = 0; i < myCards.length; i++){
+				myCards[i].style.display = 'block';
+				myCards[i].classList.add('puff-out-center');
+
+				switchCardInReveal(myCards[i]);
+			}
+
+			document.getElementById('btn-back-to-store').style.display = 'inline-block';
+			document.getElementById('btn-view-my-cards').style.display = 'inline-block';
+
+			document.getElementById('btn-reveal-all').style.display = 'none';
+	    }	
+
+	    function switchCardInReveal(card){
+	    	setTimeout(function() { 
+				card.style.display = 'none';
+				card.parentElement.querySelector('.card-listing-container').style.display = 'block';
+				card.parentElement.querySelector('.card-listing-container').classList.add('puff-out-center-reverse');
+			}, 500);
+	    }							
+
+	</script>
+
+</body>
+</html>
